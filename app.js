@@ -1,31 +1,37 @@
 /**
  * CYBER STRIKE // OFFICIAL GAME ACCOUNT & OPERATIONS PORTAL
- * Interactive Engine: Dual Auth (Steam OpenID + D4C), Daily Check-in System,
- * Promo Code Redemption, Bilingual i18n (VI/EN) & Audio Effects.
+ * Interactive Controller:
+ * - Steam OpenID Primary Flow
+ * - Collapsible D4C Publisher Account Accordion
+ * - Fixed Parallax-Free Input Logic
+ * - Daily Check-in Streak Engine
+ * - Dynamic Date Localization & News Modal
+ * - Full Bilingual Translation (VI / EN)
  */
 
 // ==========================================================================
-// 1. BILINGUAL TRANSLATION DICTIONARY (VI / EN)
+// 1. COMPREHENSIVE BILINGUAL TRANSLATION DICTIONARY
 // ==========================================================================
 const TRANSLATIONS = {
   en: {
-    portal_badge: "ACCOUNT PORTAL",
     server_online: "ONLINE",
-    nav_news: "News",
     nav_events: "Events",
     nav_checkin: "Daily Check-in",
+    nav_news: "News",
     nav_support: "Support",
     settings_title: "SYSTEM SETTINGS",
     settings_sfx: "SFX Audio Feedback",
     user_lvl: "LVL",
     btn_logout: "LOGOUT",
     badge_event: "EVENT LIVE",
-    announcement_text: "Season 3: 'Operation Zero Hour' is active! 2x EXP bonus enabled on all Asian servers.",
+    announcement_text: 'Season 3: "Operation Zero Hour" is active! 2x EXP bonus enabled on all Asian servers.',
     event_tag: "LIMITED TIME EVENT",
     event_timer: "ENDS IN: 3D 14H",
     event_title: "OPERATION ZERO HOUR: CYBER HEIST",
     event_desc: "Infiltrate Sector 07 in the new tactical extraction raid. Double weapon EXP, exclusive Neon Strike skin drops, and special community milestone rewards.",
+    btn_event_action: "VIEW EVENT MISSIONS & DETAILS →",
     checkin_title: "DAILY CHECK-IN // OPERATIVE SUPPLY",
+    resets_in: "RESETS IN:",
     streak_teaser: "7-DAY ROTATION",
     checkin_subtitle: "Log in each consecutive day to claim in-game ammunition, currency, and exclusive cosmetic blueprints.",
     day_1: "DAY 1",
@@ -35,28 +41,32 @@ const TRANSLATIONS = {
     day_5: "DAY 5",
     day_6: "DAY 6",
     day_7: "DAY 7",
-    checkin_lock_hint: "Log in to claim today's reward: <strong>250 D4C Credits</strong>!",
+    badge_today: "TODAY",
+    checkin_lock_hint: "Log in to claim today's reward: <strong>x250 D4C Credits</strong>!",
+    checkin_rule_note: "⚡ Streak Rule: Missing 1 day drops streak count by 1 tier. Check in daily to maintain maximum multipliers.",
     news_title: "TRANSMISSIONS & PATCH NOTES",
     view_all: "ALL DISPATCHES →",
     cat_update: "UPDATE",
     cat_event: "EVENT",
     cat_maint: "MAINTENANCE",
     badge_new: "NEW",
+    read_more: "Read dispatch →",
     news_1_title: "Patch 2.4.0: Weapon Balance & Anti-Cheat Protocol V4",
     news_1_snippet: "Revamped recoil patterns for DMR rifles, improved Asian cluster network tick rate, and streamlined client load times.",
     news_2_title: "Community Tournament: Cyber Strike Asia Championship",
     news_2_snippet: "Register your 5-operative squad for the $25,000 regional showdown. Open qualifiers begin this weekend.",
     news_3_title: "Scheduled Server Optimization Completed",
     news_3_snippet: "Asia-South node database indexing successfully updated. Zero service disruption reported.",
+    status_ready: "PORTAL READY",
     login_heading: "OPERATIVE LOGIN",
     login_subheading: "Sign in to claim daily rewards and get publisher updates",
     steam_subtext: "SIGN IN THROUGH",
     steam_maintext: "STEAM",
     steam_security_note: "We redirect to Steam OpenID. We will never ask for your Steam password.",
-    or_d4c: "OR USE D4C ACCOUNT",
-    d4c_caption: "D4C Studio Publisher account for cross-platform linking & direct support",
+    d4c_accordion_btn: "OR USE D4C ACCOUNT",
+    d4c_accordion_hint: "Only use if you have already linked a D4C publisher account",
     ph_user: "Username or email",
-    ph_pass: "Enter password",
+    ph_pass: "Password",
     remember_me: "Remember login",
     forgot_pass: "Forgot password?",
     btn_signin: "SIGN IN",
@@ -64,6 +74,11 @@ const TRANSLATIONS = {
     register_now: "Register now",
     cluster_asia: "CLUSTER: ASIA-SOUTH",
     portal_ver: "PORTAL: V2.4.0",
+    community_title: "COMMUNITY & CLIENT",
+    dl_client: "DOWNLOAD GAME CLIENT",
+    dl_sub: "Via Steam PC Platform",
+    discord_community: "OFFICIAL SQUAD DISCORD",
+    discord_sub: "50,000+ Active Operatives",
     rank_verified: "VERIFIED OPERATIVE",
     steam_linked: "STEAM CONNECTED ✓",
     metric_steamid: "STEAM ID:",
@@ -105,26 +120,35 @@ const TRANSLATIONS = {
     support_desc: "Our tactical technical support team operates 24/7 across Asian game servers.",
     support_bug_text: "Submit bug reproduction logs directly via in-game menu.",
     footer_privacy: "Privacy Policy",
-    footer_terms: "Terms of Service"
+    footer_terms: "Terms of Service",
+    close_dispatch: "CLOSE DISPATCH",
+    event_briefing_tag: "TACTICAL EVENT BRIEFING",
+    event_modal_h3: "OPERATION ZERO HOUR: MISSION SPECS",
+    event_modal_intro: "Deploy into Sector 07 with your fireteam. Extraction objectives reset every 12 hours. Earn double weapon proficiency and unlock exclusive Cyber Strike armory gear.",
+    mission_1: "Extract 3 encrypted data drives from the reactor core. Reward: +250 D4C Credits.",
+    mission_2: "Score 50 headshot eliminations with DMR weapons. Reward: Neon Recon Blueprint.",
+    mission_3: "Collectively clear 1,000,000 sectors across Asia servers to unlock free weekend crates.",
+    acknowledged: "ACKNOWLEDGE & RETURN"
   },
   vi: {
-    portal_badge: "CỔNG TÀI KHOẢN",
     server_online: "HOẠT ĐỘNG",
-    nav_news: "Tin tức",
     nav_events: "Sự kiện",
     nav_checkin: "Điểm danh",
+    nav_news: "Tin tức",
     nav_support: "Hỗ trợ",
     settings_title: "CÀI ĐẶT HỆ THỐNG",
     settings_sfx: "Âm thanh hiệu ứng (SFX)",
     user_lvl: "CẤP",
     btn_logout: "ĐĂNG XUẤT",
     badge_event: "SỰ KIỆN ĐANG CHẠY",
-    announcement_text: "Mùa 3: 'Chiến dịch Giờ Số 0' đang diễn ra! Tăng 2x EXP trên toàn bộ máy chủ Châu Á.",
+    announcement_text: 'Mùa 3: "Chiến dịch Giờ Số 0" đang diễn ra! Tăng 2x EXP trên toàn bộ máy chủ Châu Á.',
     event_tag: "SỰ KIỆN CÓ HẠN",
     event_timer: "KẾT THÚC SAU: 3N 14G",
     event_title: "CHIẾN DỊCH GIỜ SỐ 0: ĐỘT KÍCH MẠNG",
     event_desc: "Đột kích Khu vực 07 trong chế độ chiến thuật mới. Nhân đôi kinh nghiệm vũ khí, nhận skin Neon Strike độc quyền và phần thưởng mốc cộng đồng.",
+    btn_event_action: "XEM CHI TIẾT SỰ KIỆN & NHIỆM VỤ →",
     checkin_title: "ĐIỂM DANH HÀNG NGÀY // TIẾP TẾ ĐẶC VỤ",
+    resets_in: "LÀM MỚI SAU:",
     streak_teaser: "CHU KỲ 7 NGÀY",
     checkin_subtitle: "Đăng nhập mỗi ngày liên tục để nhận đạn dược, tiền tệ và bản thiết kế trang phục độc quyền trong game.",
     day_1: "NGÀY 1",
@@ -134,28 +158,32 @@ const TRANSLATIONS = {
     day_5: "NGÀY 5",
     day_6: "NGÀY 6",
     day_7: "NGÀY 7",
-    checkin_lock_hint: "Đăng nhập để nhận quà hôm nay: <strong>250 D4C Credits</strong>!",
+    badge_today: "HÔM NAY",
+    checkin_lock_hint: "Đăng nhập để nhận quà hôm nay: <strong>x250 D4C Credits</strong>!",
+    checkin_rule_note: "⚡ Quy tắc chuỗi: Bỏ lỡ 1 ngày sẽ bị lùi 1 bậc chuỗi điểm danh. Hãy điểm danh mỗi ngày để giữ mốc thưởng tối đa.",
     news_title: "BẢN TIN & GHI CHÚ BẢN VÁ",
     view_all: "TẤT CẢ BẢN TIN →",
     cat_update: "CẬP NHẬT",
     cat_event: "SỰ KIỆN",
     cat_maint: "BẢO TRÌ",
     badge_new: "MỚI",
+    read_more: "Đọc tiếp →",
     news_1_title: "Bản vá 2.4.0: Cân bằng vũ khí & Giao thức chống gian lận V4",
     news_1_snippet: "Cải tiến độ giật cho súng DMR, nâng cấp tick rate máy chủ Châu Á và tối ưu hóa thời gian tải game.",
     news_2_title: "Giải đấu cộng đồng: Cyber Strike Vô Địch Châu Á",
     news_2_snippet: "Đăng ký đội hình 5 đặc vụ tranh tài giải thưởng 25.000 USD. Vòng loại mở màn vào cuối tuần này.",
     news_3_title: "Hoàn tất bảo trì tối ưu hóa máy chủ định kỳ",
     news_3_snippet: "Cập nhật dữ liệu máy chủ cụm Nam Á thành công. Hoạt động bình thường không gián đoạn.",
+    status_ready: "SẴN SÀNG KẾT NỐI",
     login_heading: "ĐĂNG NHẬP ĐẶC VỤ",
     login_subheading: "Đăng nhập để điểm danh và nhận tin mới từ nhà phát hành",
     steam_subtext: "ĐĂNG NHẬP BẰNG",
     steam_maintext: "STEAM",
     steam_security_note: "Chuyển hướng qua Steam OpenID. Chúng tôi không bao giờ hỏi mật khẩu Steam của bạn.",
-    or_d4c: "HOẶC DÙNG TÀI KHOẢN D4C",
-    d4c_caption: "Tài khoản nhà phát hành D4C Studio dùng để đồng bộ đa nền tảng và hỗ trợ trực tiếp",
+    d4c_accordion_btn: "HOẶC DÙNG TÀI KHOẢN D4C",
+    d4c_accordion_hint: "Chỉ dùng nếu bạn đã liên kết tài khoản nhà phát hành D4C",
     ph_user: "Tên đăng nhập hoặc email",
-    ph_pass: "Nhập mật khẩu",
+    ph_pass: "Mật khẩu",
     remember_me: "Ghi nhớ đăng nhập",
     forgot_pass: "Quên mật khẩu?",
     btn_signin: "ĐĂNG NHẬP",
@@ -163,6 +191,11 @@ const TRANSLATIONS = {
     register_now: "Đăng ký ngay",
     cluster_asia: "CỤM MÁY CHỦ: NAM Á",
     portal_ver: "CỔNG THÔNG TIN: V2.4.0",
+    community_title: "CỘNG ĐỒNG & BỘ CÀI GAME",
+    dl_client: "TẢI BỘ CÀI GAME CLIENT",
+    dl_sub: "Qua Nền tảng Steam PC",
+    discord_community: "DISCORD BIỆT ĐỘI CHÍNH THỨC",
+    discord_sub: "Hơn 50.000 Đặc Vụ Trực Tuyến",
     rank_verified: "ĐẶC VỤ ĐÃ XÁC MINH",
     steam_linked: "ĐÃ KẾT NỐI STEAM ✓",
     metric_steamid: "MÃ STEAM:",
@@ -204,7 +237,69 @@ const TRANSLATIONS = {
     support_desc: "Đội ngũ kỹ thuật hỗ trợ 24/7 trên toàn bộ cụm máy chủ game Châu Á.",
     support_bug_text: "Gửi báo cáo lỗi trực tiếp qua menu trong game.",
     footer_privacy: "Chính sách bảo mật",
-    footer_terms: "Điều khoản dịch vụ"
+    footer_terms: "Điều khoản dịch vụ",
+    close_dispatch: "ĐÓNG BẢN TIN",
+    event_briefing_tag: "HỒ SƠ TÁC CHIẾN CHIẾN DỊCH",
+    event_modal_h3: "CHIẾN DỊCH GIỜ SỐ 0: THÔNG SỐ NHIỆM VỤ",
+    event_modal_intro: "Triển khai tới Khu vực 07 cùng hỏa lực biệt đội của bạn. Mục tiêu trích xuất dữ liệu làm mới mỗi 12 giờ. Nhận x2 độ thuần thục vũ khí và mở khóa trang bị kho vũ khí Cyber Strike.",
+    mission_1: "Trích xuất 3 ổ dữ liệu mã hóa từ lõi lò phản ứng. Thưởng: +250 D4C Credits.",
+    mission_2: "Đạt 50 hạ gục bằng phát bắn vào đầu với vũ khí DMR. Thưởng: Bản vẽ Neon Recon.",
+    mission_3: "Cộng đồng toàn máy chủ Châu Á giải cứu 1.000.000 khu vực để mở hòm thưởng miễn phí cuối tuần.",
+    acknowledged: "ĐÃ RÕ & QUAY LẠI"
+  }
+};
+
+// Full news articles content store
+const NEWS_DETAILS = {
+  'patch-240': {
+    titleEn: "Patch 2.4.0: Weapon Balance & Anti-Cheat Protocol V4",
+    titleVi: "Bản vá 2.4.0: Cân bằng vũ khí & Giao thức chống gian lận V4",
+    badge: "UPDATE",
+    date: "2026-10-18",
+    contentEn: `
+      <p><strong>Deployment Note:</strong> Server node update 2.4.0 is now live across all Asian regions. No client downtime is required.</p>
+      <ul>
+        <li><strong>DMR Rifle Rebalance:</strong> Reduced first-shot vertical kick by 14% while slightly widening horizontal spray during continuous rapid fire.</li>
+        <li><strong>Anti-Cheat V4:</strong> Upgraded heuristic memory scanning for kernel-level protection and automated telemetry validation.</li>
+        <li><strong>Network Tick Rate:</strong> Asia-South server tick rate stabilized at solid 64Hz under heavy combat scenarios.</li>
+      </ul>
+    `,
+    contentVi: `
+      <p><strong>Thông báo cập nhật:</strong> Phiên bản máy chủ 2.4.0 đã được áp dụng trên toàn bộ khu vực Châu Á mà không làm gián đoạn người chơi.</p>
+      <ul>
+        <li><strong>Cân bằng súng DMR:</strong> Giảm 14% độ giật dọc phát đầu tiên, đồng thời điều chỉnh độ lệch ngang khi bắn liên thanh.</li>
+        <li><strong>Hệ thống chống hack V4:</strong> Nâng cấp quét bộ nhớ cấp kernel và kiểm định dữ liệu người chơi tự động.</li>
+        <li><strong>Tần số mạng máy chủ:</strong> Ổn định tick rate 64Hz cho cụm máy chủ Nam Á trong các pha giao tranh quy mô lớn.</li>
+      </ul>
+    `
+  },
+  'tournament-asia': {
+    titleEn: "Community Tournament: Cyber Strike Asia Championship",
+    titleVi: "Giải đấu cộng đồng: Cyber Strike Vô Địch Châu Á",
+    badge: "EVENT",
+    date: "2026-10-16",
+    contentEn: `
+      <p>Registration is officially open for the Cyber Strike Asia Championship! Gather your 5-player squad and battle for a <strong>$25,000 USD prize pool</strong>.</p>
+      <p>Open qualifiers take place Saturday and Sunday. The top 16 teams will advance to the LAN finals broadcasted live on Steam and Twitch.</p>
+    `,
+    contentVi: `
+      <p>Cổng đăng ký Giải vô địch Cyber Strike Châu Á đã chính thức mở! Hãy tập hợp biệt đội 5 người và tranh tài giành <strong>tổng giải thưởng 25.000 USD</strong>.</p>
+      <p>Vòng loại mở rộng diễn ra vào Thứ Bảy và Chủ Nhật. 16 đội xuất sắc nhất sẽ vào vòng chung kết trực tiếp trên Steam và Twitch.</p>
+    `
+  },
+  'server-maint': {
+    titleEn: "Scheduled Server Optimization Completed",
+    titleVi: "Hoàn tất bảo trì tối ưu hóa máy chủ định kỳ",
+    badge: "MAINTENANCE",
+    date: "2026-10-14",
+    contentEn: `
+      <p>Our infrastructure team completed database indexing and cache invalidation on the Asia-South master nodes.</p>
+      <p>Average matchmaking latency reduced from 28ms to 16ms across Singapore, Vietnam, Thailand, and Indonesia routing points.</p>
+    `,
+    contentVi: `
+      <p>Đội ngũ kỹ thuật hạ tầng đã hoàn thành lập chỉ mục cơ sở dữ liệu và tối ưu bộ nhớ đệm tại các máy chủ chính khu vực Nam Á.</p>
+      <p>Độ trễ tìm trận trung bình đã giảm từ 28ms xuống còn 16ms tại các tuyến định tuyến Singapore, Việt Nam, Thái Lan và Indonesia.</p>
+    `
   }
 };
 
@@ -227,7 +322,7 @@ class SoundEngine {
     }
   }
 
-  playBeep(freq = 440, type = 'sine', duration = 0.08, gainVal = 0.1) {
+  playBeep(freq = 440, type = 'sine', duration = 0.08, gainVal = 0.08) {
     if (!this.enabled) return;
     try {
       this.init();
@@ -243,13 +338,11 @@ class SoundEngine {
       gain.connect(this.ctx.destination);
       osc.start();
       osc.stop(this.ctx.currentTime + duration);
-    } catch (e) {
-      // Audio autoplay policy handled silently
-    }
+    } catch (e) {}
   }
 
   playTyping() {
-    this.playBeep(580 + Math.random() * 160, 'square', 0.03, 0.02);
+    this.playBeep(560 + Math.random() * 140, 'square', 0.025, 0.015);
   }
 
   playClick() {
@@ -260,12 +353,12 @@ class SoundEngine {
     if (!this.enabled) return;
     const notes = [523.25, 659.25, 783.99, 1046.50];
     notes.forEach((freq, idx) => {
-      setTimeout(() => this.playBeep(freq, 'sine', 0.12, 0.08), idx * 80);
+      setTimeout(() => this.playBeep(freq, 'sine', 0.12, 0.07), idx * 75);
     });
   }
 
   playError() {
-    this.playBeep(220, 'sawtooth', 0.16, 0.09);
+    this.playBeep(220, 'sawtooth', 0.16, 0.08);
   }
 }
 
@@ -283,10 +376,9 @@ const DISPOSABLE_EMAIL_DOMAINS = new Set([
 ]);
 
 // ==========================================================================
-// 3. MAIN APPLICATION CONTROLLER
+// 3. MAIN APPLICATION LOGIC
 // ==========================================================================
 document.addEventListener('DOMContentLoaded', () => {
-  // Current session state
   let currentLang = 'en';
   let isAuthenticated = false;
   let checkinClaimed = false;
@@ -296,9 +388,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const preLoginView = document.getElementById('pre-login-view');
   const postLoginView = document.getElementById('post-login-view');
   const userProfileChip = document.getElementById('user-profile-chip');
-  const btnDemoToggle = document.getElementById('btn-demo-toggle');
-  const demoStateLabel = document.getElementById('demo-state-label');
   const toastBox = document.getElementById('toast-notification');
+
+  // Dev Demo Switcher Elements
+  const btnDemoToggle = document.getElementById('btn-demo-toggle');
+  const demoStateText = document.getElementById('demo-state-text');
+  const btnDemoMinimize = document.getElementById('btn-demo-minimize');
+  const btnDemoRestore = document.getElementById('btn-demo-restore');
+  const demoInnerPanel = document.getElementById('demo-inner-panel');
 
   // Nav & Settings
   const btnSettingsToggle = document.getElementById('btn-settings-toggle');
@@ -311,8 +408,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnHeroLogout = document.getElementById('btn-hero-logout');
   const btnSupport = document.getElementById('btn-support');
   const linkFooterSupport = document.getElementById('link-footer-support');
+  const linkJoinDiscord = document.getElementById('link-join-discord');
 
-  // Login Form Elements
+  // Login Form & Accordion Elements
+  const btnSteamPrimary = document.getElementById('btn-steam-primary');
+  const btnToggleD4cAccordion = document.getElementById('btn-toggle-d4c-accordion');
+  const d4cAccordionContent = document.getElementById('d4c-accordion-content');
+  const d4cToggleIcon = document.getElementById('d4c-toggle-icon');
   const loginForm = document.getElementById('game-login-form');
   const userInput = document.getElementById('user-input');
   const passwordInput = document.getElementById('password-input');
@@ -321,35 +423,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const loginErrorMsg = document.getElementById('login-error-msg');
   const btnSubmitLogin = document.getElementById('btn-submit-login');
   const loginSpinner = document.getElementById('login-spinner');
-  const btnSteamPrimary = document.getElementById('btn-steam-primary');
   const linkForgotPass = document.getElementById('link-forgot-pass');
   const btnTriggerRegister = document.getElementById('btn-trigger-register');
 
-  // Steam Modal Elements
+  // Modals
   const steamAuthModal = document.getElementById('steam-auth-modal');
   const closeSteamModal = document.getElementById('close-steam-modal');
   const btnConfirmSteamLogin = document.getElementById('btn-confirm-steam-login');
-
-  // D4C Registration & Recovery Modal Elements
   const authModal = document.getElementById('auth-modal');
   const closeAuthModal = document.getElementById('close-auth-modal');
   const authTabBtns = document.querySelectorAll('.auth-tab-btn');
   const authTabContents = document.querySelectorAll('.auth-tab-content');
-  const signupEmail = document.getElementById('signup-email');
-  const btnSendCode = document.getElementById('btn-send-code');
-  const emailValidationMsg = document.getElementById('email-validation-msg');
-  const signupPassword = document.getElementById('signup-password');
-  const signupRetypePassword = document.getElementById('signup-retype-password');
-  const passwordMatchMsg = document.getElementById('password-match-msg');
-  const formModalSignup = document.getElementById('form-modal-signup');
-  const formModalForgot = document.getElementById('form-modal-forgot');
-  const forgotAccount = document.getElementById('forgot-account');
-  const btnForgotSendCode = document.getElementById('btn-forgot-send-code');
-  const forgotValidationMsg = document.getElementById('forgot-validation-msg');
-
-  // Support Modal
   const supportModal = document.getElementById('support-modal');
   const closeSupportModal = document.getElementById('close-support-modal');
+  const newsDetailModal = document.getElementById('news-detail-modal');
+  const closeNewsModal = document.getElementById('close-news-modal');
+  const btnCloseNewsModalAction = document.getElementById('btn-close-news-modal-action');
+  const eventDetailModal = document.getElementById('event-detail-modal');
+  const closeEventModal = document.getElementById('close-event-modal');
+  const btnCloseEventModal = document.getElementById('btn-close-event-modal');
+  const btnViewEvent = document.getElementById('btn-view-event');
 
   // Operative Dashboard Elements
   const btnClaimCheckin = document.getElementById('btn-claim-checkin');
@@ -362,14 +455,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const daySlot5 = document.getElementById('day-slot-5');
 
   // ==========================================================================
-  // LANGUAGE & I18N SYSTEM
+  // LOCALIZATION & DATE FORMATTING
   // ==========================================================================
+  function formatDateString(isoDateStr, lang) {
+    if (!isoDateStr) return '';
+    const parts = isoDateStr.split('-');
+    if (parts.length !== 3) return isoDateStr;
+    const year = parts[0];
+    const month = parseInt(parts[1], 10);
+    const day = parts[2];
+
+    if (lang === 'vi') {
+      return `${day}/${month}/${year}`;
+    } else {
+      const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      return `${monthNames[month - 1]} ${day}, ${year}`;
+    }
+  }
+
   function setLanguage(lang) {
     if (!TRANSLATIONS[lang]) return;
     currentLang = lang;
     localStorage.setItem('portal_lang', lang);
 
-    // Update active button state
     if (lang === 'vi') {
       langBtnVi.classList.add('active');
       langBtnEn.classList.remove('active');
@@ -380,25 +488,28 @@ document.addEventListener('DOMContentLoaded', () => {
       document.documentElement.lang = 'en';
     }
 
-    // Translate DOM nodes
-    const elements = document.querySelectorAll('[data-i18n]');
-    elements.forEach(el => {
+    // Translate DOM text nodes
+    document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (TRANSLATIONS[lang][key]) {
         el.innerHTML = TRANSLATIONS[lang][key];
       }
     });
 
-    // Translate Placeholders
-    const placeholderEls = document.querySelectorAll('[data-i18n-placeholder]');
-    placeholderEls.forEach(el => {
+    // Translate placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
       const key = el.getAttribute('data-i18n-placeholder');
       if (TRANSLATIONS[lang][key]) {
         el.placeholder = TRANSLATIONS[lang][key];
       }
     });
 
-    // Update dynamic demo switcher label
+    // Format all dates dynamically according to locale
+    document.querySelectorAll('[data-date]').forEach(el => {
+      const iso = el.getAttribute('data-date');
+      el.textContent = formatDateString(iso, lang);
+    });
+
     updateDemoLabel();
   }
 
@@ -422,6 +533,76 @@ document.addEventListener('DOMContentLoaded', () => {
     sfx.playClick();
     setLanguage('en');
     showToast('Language switched to English');
+  });
+
+  // ==========================================================================
+  // D4C ACCORDION TOGGLE
+  // ==========================================================================
+  let isD4cExpanded = false;
+  btnToggleD4cAccordion.addEventListener('click', () => {
+    sfx.playClick();
+    isD4cExpanded = !isD4cExpanded;
+    btnToggleD4cAccordion.setAttribute('aria-expanded', isD4cExpanded.toString());
+
+    if (isD4cExpanded) {
+      d4cAccordionContent.classList.remove('hidden');
+      d4cToggleIcon.textContent = '−';
+      userInput.focus();
+    } else {
+      d4cAccordionContent.classList.add('hidden');
+      d4cToggleIcon.textContent = '+';
+    }
+  });
+
+  // ==========================================================================
+  // NEWS & EVENT MODALS
+  // ==========================================================================
+  document.querySelectorAll('.news-item--clickable').forEach(item => {
+    item.addEventListener('click', () => {
+      sfx.playClick();
+      const newsId = item.getAttribute('data-news-id');
+      const article = NEWS_DETAILS[newsId];
+      if (!article) return;
+
+      document.getElementById('news-modal-badge').textContent = article.badge;
+      document.getElementById('news-modal-badge').className = `news-category-badge badge-${article.badge.toLowerCase()}`;
+      document.getElementById('news-modal-date').textContent = formatDateString(article.date, currentLang);
+      document.getElementById('news-modal-heading').textContent = currentLang === 'vi' ? article.titleVi : article.titleEn;
+      document.getElementById('news-modal-content').innerHTML = currentLang === 'vi' ? article.contentVi : article.contentEn;
+
+      newsDetailModal.classList.remove('hidden');
+    });
+
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        item.click();
+      }
+    });
+  });
+
+  [closeNewsModal, btnCloseNewsModalAction].forEach(btn => {
+    if (btn) {
+      btn.addEventListener('click', () => {
+        sfx.playClick();
+        newsDetailModal.classList.add('hidden');
+      });
+    }
+  });
+
+  // Event modal trigger
+  btnViewEvent.addEventListener('click', () => {
+    sfx.playClick();
+    eventDetailModal.classList.remove('hidden');
+  });
+
+  [closeEventModal, btnCloseEventModal].forEach(btn => {
+    if (btn) {
+      btn.addEventListener('click', () => {
+        sfx.playClick();
+        eventDetailModal.classList.add('hidden');
+      });
+    }
   });
 
   // ==========================================================================
@@ -459,9 +640,7 @@ document.addEventListener('DOMContentLoaded', () => {
     input.addEventListener('input', () => sfx.playTyping());
   });
 
-  // ==========================================================================
-  // TOAST NOTIFICATION HELPER
-  // ==========================================================================
+  // Toast Notification Helper
   let toastTimer = null;
   function showToast(message) {
     if (!toastBox) return;
@@ -499,10 +678,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateDemoLabel() {
+    if (!demoStateText) return;
     if (isAuthenticated) {
-      demoStateLabel.textContent = currentLang === 'vi' ? 'ĐẶC VỤ (ĐÃ ĐĂNG NHẬP)' : 'OPERATIVE (LOGGED IN)';
+      demoStateText.textContent = currentLang === 'vi' ? 'ĐẶC VỤ (ĐÃ ĐĂNG NHẬP)' : 'OPERATIVE (LOGGED IN)';
     } else {
-      demoStateLabel.textContent = currentLang === 'vi' ? 'KHÁCH (CHƯA ĐĂNG NHẬP)' : 'GUEST (LOGGED OUT)';
+      demoStateText.textContent = currentLang === 'vi' ? 'KHÁCH (CHƯA ĐĂNG NHẬP)' : 'GUEST (LOGGED OUT)';
     }
   }
 
@@ -511,9 +691,20 @@ document.addEventListener('DOMContentLoaded', () => {
     sfx.playClick();
     setAuthState(!isAuthenticated);
     showToast(isAuthenticated 
-      ? (currentLang === 'vi' ? 'Chế độ Demo: Đã chuyển sang Giao diện Đặc Vụ' : 'Demo Mode: Switched to Operative View')
-      : (currentLang === 'vi' ? 'Chế độ Demo: Đã chuyển sang Giao diện Khách' : 'Demo Mode: Switched to Guest View')
+      ? (currentLang === 'vi' ? 'Chế độ Demo: Giao diện Đặc Vụ' : 'Demo Mode: Operative View')
+      : (currentLang === 'vi' ? 'Chế độ Demo: Giao diện Khách' : 'Demo Mode: Guest View')
     );
+  });
+
+  // Minimize / restore demo tool
+  btnDemoMinimize.addEventListener('click', () => {
+    demoInnerPanel.classList.add('hidden');
+    btnDemoRestore.classList.remove('hidden');
+  });
+
+  btnDemoRestore.addEventListener('click', () => {
+    demoInnerPanel.classList.remove('hidden');
+    btnDemoRestore.classList.add('hidden');
   });
 
   // Logouts
@@ -551,7 +742,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
   // SECONDARY AUTH: D4C ACCOUNT LOGIN FORM
   // ==========================================================================
-  // Toggle password visibility
   togglePasswordBtn.addEventListener('click', () => {
     sfx.playClick();
     if (passwordInput.type === 'password') {
@@ -605,7 +795,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ? `Đăng nhập thành công với tài khoản [${username}]` 
         : `Signed in successfully as [${username}]`
       );
-    }, 600);
+    }, 550);
   });
 
   // ==========================================================================
@@ -652,6 +842,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Disposable Email Verification Engine
+  const signupEmail = document.getElementById('signup-email');
+  const btnSendCode = document.getElementById('btn-send-code');
+  const emailValidationMsg = document.getElementById('email-validation-msg');
+  const signupPassword = document.getElementById('signup-password');
+  const signupRetypePassword = document.getElementById('signup-retype-password');
+  const passwordMatchMsg = document.getElementById('password-match-msg');
+  const formModalSignup = document.getElementById('form-modal-signup');
+  const formModalForgot = document.getElementById('form-modal-forgot');
+  const forgotAccount = document.getElementById('forgot-account');
+  const btnForgotSendCode = document.getElementById('btn-forgot-send-code');
+  const forgotValidationMsg = document.getElementById('forgot-validation-msg');
+
   function validateEmailQuality(email) {
     const trimmed = email.trim().toLowerCase();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -697,7 +899,6 @@ document.addEventListener('DOMContentLoaded', () => {
       ? `✓ Đã gửi mã xác minh tới [${email}] -> MÃ TEST: [${generatedRegCode}]`
       : `✓ Verification code dispatched to [${email}] -> CODE: [${generatedRegCode}]`;
 
-    // 60-second cooldown
     let cooldown = 60;
     btnSendCode.disabled = true;
     btnSendCode.textContent = `${cooldown}S`;
@@ -713,7 +914,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1000);
   });
 
-  // Retype password check
   function checkPasswordMatch() {
     const p1 = signupPassword.value;
     const p2 = signupRetypePassword.value;
@@ -734,7 +934,6 @@ document.addEventListener('DOMContentLoaded', () => {
   signupPassword.addEventListener('input', checkPasswordMatch);
   signupRetypePassword.addEventListener('input', checkPasswordMatch);
 
-  // Submit Registration
   formModalSignup.addEventListener('submit', (e) => {
     e.preventDefault();
     const user = document.getElementById('signup-username').value.trim();
@@ -759,7 +958,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setAuthState(true, user);
   });
 
-  // Forgot password form
   btnForgotSendCode.addEventListener('click', () => {
     const acc = forgotAccount.value.trim();
     if (!acc) return;
@@ -780,7 +978,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Support Modal
-  [btnSupport, linkFooterSupport].forEach(btn => {
+  [btnSupport, linkFooterSupport, linkJoinDiscord].forEach(btn => {
     if (btn) {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -804,21 +1002,17 @@ document.addEventListener('DOMContentLoaded', () => {
     checkinClaimed = true;
     currentStreak = 6;
 
-    // Update Day 5 visual slot
     daySlot5.classList.remove('ready-to-claim');
     daySlot5.classList.add('claimed');
     daySlot5.querySelector('.day-status-pill').textContent = '✓';
-    daySlot5.querySelector('.day-status-pill').className = 'day-status-pill';
+    daySlot5.querySelector('.day-status-pill').className = 'day-status-pill claimed-pill';
 
-    // Update streak indicators
     checkinStreakPill.textContent = '6 / 7 DAYS';
     dashStreakCount.textContent = `🔥 6 ${currentLang === 'vi' ? 'NGÀY' : 'DAYS'}`;
 
-    // Disable Claim button
     btnClaimCheckin.disabled = true;
     btnClaimCheckin.textContent = currentLang === 'vi' ? '✓ ĐÃ NHẬN TIẾP TẾ HÔM NAY' : '✓ TODAY\'S SUPPLY CLAIMED';
 
-    // Show confirmation feedback
     checkinSuccessMsg.classList.remove('hidden');
     checkinSuccessMsg.textContent = currentLang === 'vi'
       ? '✓ Tiếp tế thành công! 1x Giáp Chiến Thuật (Armor Pack) đã được gửi vào hòm đồ in-game.'
@@ -827,9 +1021,7 @@ document.addEventListener('DOMContentLoaded', () => {
     showToast(currentLang === 'vi' ? 'Điểm danh thành công! +Armor Pack' : 'Check-in claimed! +Armor Pack');
   });
 
-  // ==========================================================================
-  // OPERATIVE DASHBOARD: GIFT CODE PROMO REDEMPTION
-  // ==========================================================================
+  // Promo code redemption
   const VALID_PROMO_CODES = {
     'CYBER2026': { rewardEn: '500 D4C Credits + 1x Neon Weapon Blueprint', rewardVi: '500 D4C Credits + 1x Bản vẽ vũ khí Neon' },
     'OP_STRIKE': { rewardEn: '3-Day 2x Battle EXP Booster', rewardVi: 'Thẻ nhân đôi kinh nghiệm 3 ngày' }
@@ -872,8 +1064,8 @@ document.addEventListener('DOMContentLoaded', () => {
         sfx.playClick();
         btn.textContent = currentLang === 'vi' ? 'ĐÃ KẾT NỐI' : 'LINKED';
         btn.disabled = true;
-        btn.style.background = '#00d26a';
-        btn.style.color = '#000';
+        btn.style.background = '#00c853';
+        btn.style.color = '#000000';
         showToast(currentLang === 'vi' ? 'Đã liên kết tài khoản thành công!' : 'Platform linked successfully!');
       });
     }

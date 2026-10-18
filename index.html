@@ -18,42 +18,41 @@
   <div class="bg-grid"></div>
 
   <!-- Main Navigation Bar -->
-  <header class="navbar">
+  <header class="navbar" role="banner">
     <div class="nav-left">
-      <div class="brand">
+      <a href="#" class="brand" aria-label="Cyber Strike Portal Home">
         <div class="brand-badge">D4C</div>
         <div class="brand-title">CYBER<span>STRIKE</span></div>
-        <span class="portal-badge" data-i18n="portal_badge">ACCOUNT PORTAL</span>
-      </div>
+      </a>
 
-      <!-- Real Server Status -->
+      <!-- Compact Merged Server Status Pill -->
       <div class="server-status-pill" title="Asia-South Cluster Server Status">
-        <span class="status-indicator-dot"></span>
+        <span class="status-indicator-dot" aria-hidden="true"></span>
         <span class="status-text">ASIA-SOUTH: <strong data-i18n="server_online">ONLINE</strong></span>
       </div>
     </div>
 
     <!-- Center Navigation Links -->
     <nav class="nav-menu" aria-label="Portal Navigation">
-      <a href="#news-section" class="nav-link" data-i18n="nav_news">News</a>
       <a href="#events-section" class="nav-link" data-i18n="nav_events">Events</a>
       <a href="#checkin-section" class="nav-link" data-i18n="nav_checkin">Daily Check-in</a>
+      <a href="#news-section" class="nav-link" data-i18n="nav_news">News</a>
       <button type="button" id="btn-support" class="nav-link nav-link--btn" data-i18n="nav_support">Support</button>
     </nav>
 
     <!-- Right Controls -->
     <div class="nav-right">
-      <!-- Language Switcher -->
-      <div class="lang-switcher">
-        <button type="button" id="lang-btn-vi" class="lang-btn" aria-label="Chuyển sang Tiếng Việt">VI</button>
-        <span class="lang-divider">/</span>
-        <button type="button" id="lang-btn-en" class="lang-btn active" aria-label="Switch to English">EN</button>
+      <!-- Full-Text Language Switcher -->
+      <div class="lang-switcher" role="group" aria-label="Language selection">
+        <button type="button" id="lang-btn-vi" class="lang-btn" aria-label="Chuyển sang Tiếng Việt">Tiếng Việt</button>
+        <span class="lang-divider" aria-hidden="true">/</span>
+        <button type="button" id="lang-btn-en" class="lang-btn active" aria-label="Switch to English">English</button>
       </div>
 
       <!-- Settings Menu (SFX Audio Toggle) -->
       <div class="settings-menu-wrap">
-        <button type="button" id="btn-settings-toggle" class="btn-icon" aria-label="Audio and Portal Settings" title="Portal Settings">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+        <button type="button" id="btn-settings-toggle" class="btn-icon" aria-label="Portal Audio and System Settings" title="Portal Settings">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <circle cx="12" cy="12" r="3"></circle>
             <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
           </svg>
@@ -73,7 +72,7 @@
       <div id="user-profile-chip" class="user-profile-chip hidden">
         <div class="user-avatar-wrap">
           <img src="https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg" alt="Steam Avatar" class="user-avatar" id="header-user-avatar">
-          <span class="user-online-pip"></span>
+          <span class="user-online-pip" aria-hidden="true"></span>
         </div>
         <div class="user-details">
           <span class="user-name" id="header-user-name">Ghost_Sniper99</span>
@@ -84,33 +83,35 @@
     </div>
   </header>
 
-  <!-- Notification Banner (For maintenance / server announcements) -->
-  <div id="global-announcement" class="global-announcement">
+  <!-- Notification Banner (Clean string, no formatting typo) -->
+  <aside id="global-announcement" class="global-announcement" aria-label="Server Announcement">
     <div class="announcement-content">
       <span class="announcement-badge" data-i18n="badge_event">EVENT LIVE</span>
-      <span class="announcement-text" data-i18n="announcement_text">Season 3: "Operation Zero Hour" is active! 2x EXP bonus enabled on all Asian servers.</span>
+      <span class="announcement-text" id="announcement-text" data-i18n="announcement_text">
+        Season 3: "Operation Zero Hour" is active! 2x EXP bonus enabled on all Asian servers.
+      </span>
     </div>
-  </div>
+  </aside>
 
   <!-- Main Container -->
   <main class="portal-container">
     
     <!-- ====================================================================
-         STATE 1: PRE-LOGIN VIEW (2 COLUMNS: PORTAL TEASERS + LOGIN CARD)
+         STATE 1: PRE-LOGIN VIEW (2 COLUMNS: PORTAL TEASERS + STICKY AUTH)
          ==================================================================== -->
     <div id="pre-login-view" class="portal-grid">
       
       <!-- LEFT COLUMN: Portal Hub & Teasers (Why log in) -->
-      <section class="portal-hub-col" aria-label="Portal News and Daily Rewards Teaser">
+      <div class="portal-hub-col">
         
-        <!-- Featured Event Hero Card -->
-        <div class="event-hero-card" id="events-section">
+        <!-- Featured Event Hero Card with Action Button -->
+        <section class="event-hero-card" id="events-section" aria-labelledby="event-hero-title">
           <div class="event-card-header">
             <span class="event-tag" data-i18n="event_tag">LIMITED TIME EVENT</span>
             <span class="event-timer" data-i18n="event_timer">ENDS IN: 3D 14H</span>
           </div>
           <div class="event-card-body">
-            <h2 class="event-title" data-i18n="event_title">OPERATION ZERO HOUR: CYBER HEIST</h2>
+            <h2 class="event-title" id="event-hero-title" data-i18n="event_title">OPERATION ZERO HOUR: CYBER HEIST</h2>
             <p class="event-description" data-i18n="event_desc">
               Infiltrate Sector 07 in the new tactical extraction raid. Double weapon EXP, exclusive Neon Strike skin drops, and special community milestone rewards.
             </p>
@@ -119,127 +120,163 @@
               <div class="event-reward-pill">🎁 <span>NEON RECON SKIN</span></div>
               <div class="event-reward-pill">⚡ <span>500 D4C CREDITS</span></div>
             </div>
+            <div class="event-action-bar">
+              <button type="button" id="btn-view-event" class="btn-event-action" data-i18n="btn_event_action">
+                VIEW EVENT MISSIONS &amp; DETAILS &rarr;
+              </button>
+            </div>
           </div>
-        </div>
+        </section>
 
-        <!-- Daily Check-in Teaser Card -->
-        <div class="card-box checkin-teaser-card" id="checkin-section">
+        <!-- Daily Check-in Teaser Card (Clear Preview & Quantities) -->
+        <section class="card-box checkin-teaser-card" id="checkin-section" aria-labelledby="checkin-box-title">
           <div class="card-box-header">
             <div class="card-box-title-group">
-              <span class="card-icon">📅</span>
-              <h3 class="card-box-title" data-i18n="checkin_title">DAILY CHECK-IN // OPERATIVE SUPPLY</h3>
+              <span class="card-icon" aria-hidden="true">📅</span>
+              <h3 class="card-box-title" id="checkin-box-title" data-i18n="checkin_title">DAILY CHECK-IN // OPERATIVE SUPPLY</h3>
             </div>
-            <span class="badge-streak" data-i18n="streak_teaser">7-DAY ROTATION</span>
+            <div class="checkin-header-meta">
+              <span class="badge-countdown" id="checkin-reset-timer">⏱️ <span data-i18n="resets_in">RESETS IN:</span> 06H 42M</span>
+              <span class="badge-streak" data-i18n="streak_teaser">7-DAY ROTATION</span>
+            </div>
           </div>
+          
           <div class="checkin-teaser-body">
             <p class="teaser-sub" data-i18n="checkin_subtitle">Log in each consecutive day to claim in-game ammunition, currency, and exclusive cosmetic blueprints.</p>
             
-            <!-- 7-Day Rewards Calendar Grid Preview (Locked State) -->
-            <div class="checkin-days-grid">
-              <div class="day-slot claimed">
+            <!-- 7-Day Rewards Calendar Grid Preview (All Preview Locked, Day 4 Highlighted) -->
+            <div class="checkin-days-grid" role="list" aria-label="7-Day Reward Supply Preview">
+              <div class="day-slot slot-preview" role="listitem" aria-label="Day 1: 100 Gold, Locked preview">
                 <span class="day-num" data-i18n="day_1">DAY 1</span>
-                <span class="day-reward-icon">🪙</span>
-                <span class="day-reward-label">100 Gold</span>
-                <span class="day-status-pill">✓</span>
+                <span class="day-reward-icon" aria-hidden="true">🪙</span>
+                <span class="day-reward-qty">x100</span>
+                <span class="day-reward-label">Gold</span>
+                <span class="day-status-pill lock-pill" aria-label="Locked">🔒</span>
               </div>
-              <div class="day-slot claimed">
+
+              <div class="day-slot slot-preview" role="listitem" aria-label="Day 2: 1 EXP Boost, Locked preview">
                 <span class="day-num" data-i18n="day_2">DAY 2</span>
-                <span class="day-reward-icon">⚡</span>
+                <span class="day-reward-icon" aria-hidden="true">⚡</span>
+                <span class="day-reward-qty">x1</span>
                 <span class="day-reward-label">EXP Boost</span>
-                <span class="day-status-pill">✓</span>
+                <span class="day-status-pill lock-pill" aria-label="Locked">🔒</span>
               </div>
-              <div class="day-slot claimed">
+
+              <div class="day-slot slot-preview" role="listitem" aria-label="Day 3: 2 Ammo Crates, Locked preview">
                 <span class="day-num" data-i18n="day_3">DAY 3</span>
-                <span class="day-reward-icon">📦</span>
+                <span class="day-reward-icon" aria-hidden="true">📦</span>
+                <span class="day-reward-qty">x2</span>
                 <span class="day-reward-label">Ammo Crate</span>
-                <span class="day-status-pill">✓</span>
+                <span class="day-status-pill lock-pill" aria-label="Locked">🔒</span>
               </div>
-              <div class="day-slot current-locked">
+
+              <!-- Day 4: Highlighted as Today's Claimable Drop -->
+              <div class="day-slot slot-today" role="listitem" aria-label="Day 4: 250 D4C Credits, Today's Available Reward">
                 <span class="day-num" data-i18n="day_4">DAY 4</span>
-                <span class="day-reward-icon">💎</span>
-                <span class="day-reward-label">250 Credits</span>
-                <span class="day-status-pill lock-icon">🔒</span>
+                <span class="day-reward-icon" aria-hidden="true">💎</span>
+                <span class="day-reward-qty">x250</span>
+                <span class="day-reward-label">Credits</span>
+                <span class="day-status-pill today-pill" data-i18n="badge_today">TODAY</span>
               </div>
-              <div class="day-slot locked">
+
+              <div class="day-slot slot-preview" role="listitem" aria-label="Day 5: 1 Armor Pack, Locked preview">
                 <span class="day-num" data-i18n="day_5">DAY 5</span>
-                <span class="day-reward-icon">🛡️</span>
+                <span class="day-reward-icon" aria-hidden="true">🛡️</span>
+                <span class="day-reward-qty">x1</span>
                 <span class="day-reward-label">Armor Pack</span>
-                <span class="day-status-pill lock-icon">🔒</span>
+                <span class="day-status-pill lock-pill" aria-label="Locked">🔒</span>
               </div>
-              <div class="day-slot locked">
+
+              <div class="day-slot slot-preview" role="listitem" aria-label="Day 6: 1 Cyber Key, Locked preview">
                 <span class="day-num" data-i18n="day_6">DAY 6</span>
-                <span class="day-reward-icon">🔑</span>
+                <span class="day-reward-icon" aria-hidden="true">🔑</span>
+                <span class="day-reward-qty">x1</span>
                 <span class="day-reward-label">Cyber Key</span>
-                <span class="day-status-pill lock-icon">🔒</span>
+                <span class="day-status-pill lock-pill" aria-label="Locked">🔒</span>
               </div>
-              <div class="day-slot locked epic-slot">
+
+              <div class="day-slot slot-preview epic-slot" role="listitem" aria-label="Day 7: Exclusive Viper Weapon Skin, Locked preview">
                 <span class="day-num" data-i18n="day_7">DAY 7</span>
-                <span class="day-reward-icon">🔫</span>
+                <span class="day-reward-icon" aria-hidden="true">🔫</span>
+                <span class="day-reward-qty">x1</span>
                 <span class="day-reward-label">Viper Skin</span>
-                <span class="day-status-pill lock-icon">🔒</span>
+                <span class="day-status-pill lock-pill" aria-label="Locked">🔒</span>
               </div>
             </div>
 
             <!-- Call to Action Banner inside Check-in Teaser -->
             <div class="checkin-lock-banner">
-              <span class="lock-symbol">🔒</span>
-              <span class="lock-text" data-i18n="checkin_lock_hint">Log in to claim today's reward: <strong>250 D4C Credits</strong>!</span>
+              <span class="lock-symbol" aria-hidden="true">🔒</span>
+              <span class="lock-text" data-i18n="checkin_lock_hint">Log in to claim today's reward: <strong>x250 D4C Credits</strong>!</span>
+            </div>
+
+            <div class="checkin-rule-footnote">
+              <span data-i18n="checkin_rule_note">⚡ Streak Rule: Missing 1 day drops streak count by 1 tier. Check in daily to maintain maximum multipliers.</span>
             </div>
           </div>
-        </div>
+        </section>
 
-        <!-- Latest News & Patch Notes Feed -->
-        <div class="card-box news-feed-card" id="news-section">
+        <!-- Latest News & Patch Notes Feed (Clickable Cards with Localized Dates) -->
+        <section class="card-box news-feed-card" id="news-section" aria-labelledby="news-box-title">
           <div class="card-box-header">
             <div class="card-box-title-group">
-              <span class="card-icon">📡</span>
-              <h3 class="card-box-title" data-i18n="news_title">TRANSMISSIONS & PATCH NOTES</h3>
+              <span class="card-icon" aria-hidden="true">📡</span>
+              <h3 class="card-box-title" id="news-box-title" data-i18n="news_title">TRANSMISSIONS & PATCH NOTES</h3>
             </div>
             <a href="#" class="view-all-link" id="link-view-all-news" data-i18n="view_all">ALL DISPATCHES &rarr;</a>
           </div>
+          
           <div class="news-list">
-            <article class="news-item">
+            <!-- News Article 1 -->
+            <article class="news-item news-item--clickable" data-news-id="patch-240" tabindex="0" role="button" aria-label="Read Patch 2.4.0 details">
               <div class="news-meta">
                 <span class="news-category-badge badge-update" data-i18n="cat_update">UPDATE</span>
-                <time class="news-date">OCT 18, 2026</time>
+                <time class="news-date" datetime="2026-10-18" data-date="2026-10-18">Oct 18, 2026</time>
                 <span class="news-new-pill" data-i18n="badge_new">NEW</span>
               </div>
               <h4 class="news-item-title" data-i18n="news_1_title">Patch 2.4.0: Weapon Balance & Anti-Cheat Protocol V4</h4>
               <p class="news-item-snippet" data-i18n="news_1_snippet">Revamped recoil patterns for DMR rifles, improved Asian cluster network tick rate, and streamlined client load times.</p>
+              <span class="news-read-more" data-i18n="read_more">Read dispatch &rarr;</span>
             </article>
 
-            <article class="news-item">
+            <!-- News Article 2 -->
+            <article class="news-item news-item--clickable" data-news-id="tournament-asia" tabindex="0" role="button" aria-label="Read Asia Championship tournament details">
               <div class="news-meta">
                 <span class="news-category-badge badge-event" data-i18n="cat_event">EVENT</span>
-                <time class="news-date">OCT 16, 2026</time>
+                <time class="news-date" datetime="2026-10-16" data-date="2026-10-16">Oct 16, 2026</time>
               </div>
               <h4 class="news-item-title" data-i18n="news_2_title">Community Tournament: Cyber Strike Asia Championship</h4>
               <p class="news-item-snippet" data-i18n="news_2_snippet">Register your 5-operative squad for the $25,000 regional showdown. Open qualifiers begin this weekend.</p>
+              <span class="news-read-more" data-i18n="read_more">Read dispatch &rarr;</span>
             </article>
 
-            <article class="news-item">
+            <!-- News Article 3 -->
+            <article class="news-item news-item--clickable" data-news-id="server-maint" tabindex="0" role="button" aria-label="Read maintenance optimization details">
               <div class="news-meta">
                 <span class="news-category-badge badge-maint" data-i18n="cat_maint">MAINTENANCE</span>
-                <time class="news-date">OCT 14, 2026</time>
+                <time class="news-date" datetime="2026-10-14" data-date="2026-10-14">Oct 14, 2026</time>
               </div>
               <h4 class="news-item-title" data-i18n="news_3_title">Scheduled Server Optimization Completed</h4>
               <p class="news-item-snippet" data-i18n="news_3_snippet">Asia-South node database indexing successfully updated. Zero service disruption reported.</p>
+              <span class="news-read-more" data-i18n="read_more">Read dispatch &rarr;</span>
             </article>
           </div>
-        </div>
+        </section>
 
-      </section>
+      </div>
 
-      <!-- RIGHT COLUMN: Authentication Card (Steam Primary + D4C Secondary) -->
-      <section class="portal-auth-col" aria-label="Account Login Area">
+      <!-- RIGHT COLUMN: STICKY AUTHENTICATION & COMMUNITY SIDEBAR -->
+      <aside class="portal-auth-col" aria-label="Authentication and Community Links">
+        
+        <!-- Operative Login Card -->
         <div class="portal-card">
           
-          <!-- Card Header Bar (Clean, no 3 macOS dots) -->
+          <!-- Card Header Bar (No technical SSL clutter) -->
           <div class="card-header-bar">
-            <div class="card-system-tag">AUTH_GATEWAY // D4C-ID</div>
-            <div class="card-secure-indicator">
-              <span class="secure-dot"></span>
-              <span>SSL ENCRYPTED</span>
+            <div class="card-system-tag">AUTH_GATEWAY // SECTOR-07</div>
+            <div class="card-status-pill">
+              <span class="secure-dot" aria-hidden="true"></span>
+              <span data-i18n="status_ready">PORTAL READY</span>
             </div>
           </div>
 
@@ -250,20 +287,19 @@
               <p class="portal-subheading" data-i18n="login_subheading">Sign in to claim daily rewards and get publisher updates</p>
             </div>
 
-            <!-- PRIMARY AUTHENTICATION METHOD: STEAM (Top CTA) -->
+            <!-- PRIMARY AUTHENTICATION METHOD: STEAM (DOMINANT HIGH-IMPACT CTA) -->
             <div class="primary-auth-zone">
-              <!-- Fast Cat 82 Button by 0xnihilism customized for Steam -->
               <a
                 href="#"
                 id="btn-steam-primary"
                 class="brutalist-button steam-primary-btn"
                 role="button"
                 aria-label="Sign in through Steam"
-                title="Authenticate instantly using your Steam account"
+                title="Authenticate instantly using your official Steam account"
               >
                 <div class="steam-logo">
                   <!-- Official Steam SVG Logo -->
-                  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                  <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" aria-hidden="true">
                     <path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.005.105.005.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 12-5.373 12-12S18.605 0 11.979 0zM7.54 18.216l-1.474-.61c.262.543.714.984 1.287 1.235.918.402 1.986.177 2.651-.519l-.794-.328c-.443.342-1.077.42-1.67.222zm8.4-11.455c-1.394 0-2.527 1.134-2.527 2.528 0 1.393 1.133 2.527 2.527 2.527 1.395 0 2.527-1.134 2.527-2.527 0-1.394-1.132-2.528-2.527-2.528zm.004.996c.846 0 1.533.687 1.533 1.532 0 .846-.687 1.532-1.533 1.532-.846 0-1.532-.686-1.532-1.532 0-.845.686-1.532 1.532-1.532zM8.36 14.188c-.628-.26-1.353-.146-1.859.324l.808.334c.338-.205.771-.247 1.15-.084.58.25.89.877.747 1.482l1.492.617c.05-.244.075-.497.075-.755 0-1.082-.547-2.074-1.413-2.518z"/>
                   </svg>
                 </div>
@@ -275,97 +311,147 @@
 
               <!-- Anti-Phishing Security Guarantee -->
               <p class="steam-security-note" data-i18n="steam_security_note">
-                <span class="shield-icon">🛡️</span> We redirect to Steam OpenID. We will never ask for your Steam password.
+                <span class="shield-icon" aria-hidden="true">🛡️</span> We redirect to Steam OpenID. We will never ask for your Steam password.
               </p>
             </div>
 
-            <!-- Divider with D4C Explanation -->
-            <div class="portal-divider">
-              <span data-i18n="or_d4c">OR USE D4C ACCOUNT</span>
-            </div>
-            <p class="d4c-caption" data-i18n="d4c_caption">D4C Studio Publisher account for cross-platform linking & direct support</p>
-
-            <!-- SECONDARY AUTH: D4C USERNAME / PASSWORD FORM -->
-            <form id="game-login-form" class="auth-form" onsubmit="return false;" novalidate>
-              
-              <!-- Inline Error Feedback Box -->
-              <div id="login-error-msg" class="login-feedback-box hidden" role="alert"></div>
-
-              <!-- Username / Email Input (wise-lizard-57 by 0xnihilism) -->
-              <div class="input-field-wrapper">
-                <div class="input__container" id="username-container">
-                  <div class="shadow__input"></div>
-                  <div class="input__button__shadow">
-                    <svg viewBox="0 0 24 24" width="20px" height="20px" fill="#000000">
-                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                    </svg>
-                  </div>
-                  <input
-                    type="text"
-                    name="username"
-                    id="user-input"
-                    class="input__search"
-                    placeholder="Username or email"
-                    data-i18n-placeholder="ph_user"
-                    autocomplete="username"
-                    required
-                  />
-                </div>
-              </div>
-
-              <!-- Password Input (wise-lizard-57 with Show/Hide toggle) -->
-              <div class="input-field-wrapper">
-                <div class="input__container input__container--password" id="password-container">
-                  <div class="shadow__input"></div>
-                  <button type="button" class="input__button__shadow" id="toggle-password" title="Show or hide password" aria-label="Toggle password visibility">
-                    <svg id="eye-icon" viewBox="0 0 24 24" width="20px" height="20px" fill="#000000">
-                      <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
-                    </svg>
-                  </button>
-                  <input
-                    type="password"
-                    name="password"
-                    id="password-input"
-                    class="input__search"
-                    placeholder="Enter password"
-                    data-i18n-placeholder="ph_pass"
-                    autocomplete="current-password"
-                    required
-                  />
-                </div>
-              </div>
-
-              <!-- Utilities Row: Remember Me & Forgot Password -->
-              <div class="form-utilities-row">
-                <label class="remember-checkbox-label">
-                  <input type="checkbox" id="remember-me" class="brutalist-checkbox">
-                  <span class="custom-box"></span>
-                  <span class="checkbox-text" data-i18n="remember_me">Remember login</span>
-                </label>
-                <a href="#" id="link-forgot-pass" class="forgot-pass-link" data-i18n="forgot_pass">Forgot password?</a>
-              </div>
-
-              <!-- Form Submit Button: Explicit "SIGN IN" -->
-              <button type="submit" id="btn-submit-login" class="d4c-submit-btn">
-                <span class="btn-text" data-i18n="btn_signin">SIGN IN</span>
-                <span class="btn-spinner hidden" id="login-spinner"></span>
+            <!-- COLLAPSIBLE D4C PUBLISHER ACCOUNT SECTION -->
+            <div class="d4c-accordion-wrapper">
+              <button
+                type="button"
+                id="btn-toggle-d4c-accordion"
+                class="d4c-accordion-toggle"
+                aria-expanded="false"
+                aria-controls="d4c-accordion-content"
+              >
+                <span class="toggle-icon" id="d4c-toggle-icon" aria-hidden="true">+</span>
+                <span class="toggle-title" data-i18n="d4c_accordion_btn">OR USE D4C ACCOUNT</span>
               </button>
+              
+              <p class="d4c-accordion-hint" data-i18n="d4c_accordion_hint">
+                Only use if you have already linked a D4C publisher account
+              </p>
 
-              <!-- In-Card Register Trigger Link -->
-              <div class="card-register-footer">
-                <span data-i18n="no_account">Don't have a D4C account?</span>
-                <button type="button" id="btn-trigger-register" class="link-register" data-i18n="register_now">Register now</button>
+              <!-- Collapsible Content (Smooth Expansion) -->
+              <div id="d4c-accordion-content" class="d4c-accordion-content hidden">
+                <form id="game-login-form" class="auth-form" onsubmit="return false;" novalidate>
+                  
+                  <!-- Inline Error Feedback Box -->
+                  <div id="login-error-msg" class="login-feedback-box hidden" role="alert"></div>
+
+                  <!-- Username / Email Input (Unified Depth, No Broken Border) -->
+                  <div class="input-field-wrapper">
+                    <label for="user-input" class="sr-only" data-i18n="ph_user">Username or email</label>
+                    <div class="input__container" id="username-container">
+                      <div class="input__button__shadow" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="20px" height="20px" fill="#000000">
+                          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                      </div>
+                      <input
+                        type="text"
+                        name="username"
+                        id="user-input"
+                        class="input__search"
+                        placeholder="Username or email"
+                        data-i18n-placeholder="ph_user"
+                        autocomplete="username"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Password Input (Plain text placeholder, Eye toggle) -->
+                  <div class="input-field-wrapper">
+                    <label for="password-input" class="sr-only" data-i18n="ph_pass">Password</label>
+                    <div class="input__container input__container--password" id="password-container">
+                      <button
+                        type="button"
+                        class="input__button__shadow"
+                        id="toggle-password"
+                        title="Show or hide password"
+                        aria-label="Toggle password visibility"
+                      >
+                        <svg id="eye-icon" viewBox="0 0 24 24" width="20px" height="20px" fill="#000000" aria-hidden="true">
+                          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                        </svg>
+                      </button>
+                      <input
+                        type="password"
+                        name="password"
+                        id="password-input"
+                        class="input__search"
+                        placeholder="Password"
+                        data-i18n-placeholder="ph_pass"
+                        autocomplete="current-password"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Utilities Row: Remember Me & Forgot Password -->
+                  <div class="form-utilities-row">
+                    <label class="remember-checkbox-label" for="remember-me">
+                      <input type="checkbox" id="remember-me" class="brutalist-checkbox">
+                      <span class="checkbox-text" data-i18n="remember_me">Remember login</span>
+                    </label>
+                    <a href="#" id="link-forgot-pass" class="forgot-pass-link" data-i18n="forgot_pass">Forgot password?</a>
+                  </div>
+
+                  <!-- Form Submit Button: Styled as Secondary Outline Button -->
+                  <button type="submit" id="btn-submit-login" class="d4c-secondary-btn">
+                    <span class="btn-text" data-i18n="btn_signin">SIGN IN</span>
+                    <span class="btn-spinner hidden" id="login-spinner" aria-hidden="true"></span>
+                  </button>
+
+                  <!-- In-Card Register Trigger Link -->
+                  <div class="card-register-footer">
+                    <span data-i18n="no_account">Don't have a D4C account?</span>
+                    <button type="button" id="btn-trigger-register" class="link-register" data-i18n="register_now">Register now</button>
+                  </div>
+                </form>
               </div>
-            </form>
+            </div>
+
           </div>
 
           <!-- Card Footer Status -->
           <div class="card-footer-info">
-            <div class="status-item"><span class="badge-dot"></span> <span data-i18n="cluster_asia">CLUSTER: ASIA-SOUTH</span></div>
+            <div class="status-item"><span class="badge-dot" aria-hidden="true"></span> <span data-i18n="cluster_asia">CLUSTER: ASIA-SOUTH</span></div>
             <div class="status-item" data-i18n="portal_ver">PORTAL: V2.4.0</div>
           </div>
         </div>
-      </section>
+
+        <!-- COMMUNITY & DOWNLOADS WIDGET (Fills empty vertical space nicely) -->
+        <div class="card-box community-quick-card">
+          <div class="card-box-header">
+            <div class="card-box-title-group">
+              <span class="card-icon" aria-hidden="true">🎮</span>
+              <h3 class="card-box-title" data-i18n="community_title">COMMUNITY & CLIENT</h3>
+            </div>
+          </div>
+          <div class="community-card-body">
+            <a href="https://store.steampowered.com/" target="_blank" rel="noopener noreferrer" class="quick-action-row">
+              <span class="quick-icon" aria-hidden="true">📥</span>
+              <div class="quick-info">
+                <strong data-i18n="dl_client">DOWNLOAD GAME CLIENT</strong>
+                <span data-i18n="dl_sub">Via Steam PC Platform</span>
+              </div>
+              <span class="quick-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+
+            <a href="#support-modal" id="link-join-discord" class="quick-action-row">
+              <span class="quick-icon" aria-hidden="true">💬</span>
+              <div class="quick-info">
+                <strong data-i18n="discord_community">OFFICIAL SQUAD DISCORD</strong>
+                <span data-i18n="discord_sub">50,000+ Active Operatives</span>
+              </div>
+              <span class="quick-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+      </aside>
 
     </div>
 
@@ -375,10 +461,10 @@
     <div id="post-login-view" class="post-login-container hidden">
       
       <!-- Operative Welcome Banner -->
-      <section class="operative-hero-banner">
+      <section class="operative-hero-banner" aria-label="Operative Dossier">
         <div class="hero-avatar-box">
           <img src="https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_full.jpg" alt="Steam Operative Avatar" class="hero-avatar" id="dash-user-avatar">
-          <span class="hero-online-status"></span>
+          <span class="hero-online-status" aria-hidden="true"></span>
         </div>
         <div class="hero-profile-info">
           <div class="hero-title-row">
@@ -410,11 +496,11 @@
       <div class="operative-dashboard-grid">
         
         <!-- Interactive Daily Check-in Card -->
-        <section class="card-box operative-checkin-card">
+        <section class="card-box operative-checkin-card" aria-labelledby="active-checkin-heading">
           <div class="card-box-header">
             <div class="card-box-title-group">
-              <span class="card-icon">⚡</span>
-              <h3 class="card-box-title" data-i18n="active_checkin_title">DAILY CHECK-IN // SUPPLY CLAIM</h3>
+              <span class="card-icon" aria-hidden="true">⚡</span>
+              <h3 class="card-box-title" id="active-checkin-heading" data-i18n="active_checkin_title">DAILY CHECK-IN // SUPPLY CLAIM</h3>
             </div>
             <span class="streak-badge-active" id="checkin-streak-pill">5 / 7 DAYS</span>
           </div>
@@ -425,48 +511,55 @@
             </p>
 
             <!-- 7-Day Active Grid -->
-            <div class="checkin-days-grid" id="operative-days-grid">
-              <div class="day-slot claimed">
+            <div class="checkin-days-grid" id="operative-days-grid" role="list">
+              <div class="day-slot claimed" role="listitem">
                 <span class="day-num" data-i18n="day_1">DAY 1</span>
-                <span class="day-reward-icon">🪙</span>
-                <span class="day-reward-label">100 Gold</span>
-                <span class="day-status-pill">✓</span>
+                <span class="day-reward-icon" aria-hidden="true">🪙</span>
+                <span class="day-reward-qty">x100</span>
+                <span class="day-reward-label">Gold</span>
+                <span class="day-status-pill claimed-pill" aria-label="Claimed">✓</span>
               </div>
-              <div class="day-slot claimed">
+              <div class="day-slot claimed" role="listitem">
                 <span class="day-num" data-i18n="day_2">DAY 2</span>
-                <span class="day-reward-icon">⚡</span>
+                <span class="day-reward-icon" aria-hidden="true">⚡</span>
+                <span class="day-reward-qty">x1</span>
                 <span class="day-reward-label">EXP Boost</span>
-                <span class="day-status-pill">✓</span>
+                <span class="day-status-pill claimed-pill" aria-label="Claimed">✓</span>
               </div>
-              <div class="day-slot claimed">
+              <div class="day-slot claimed" role="listitem">
                 <span class="day-num" data-i18n="day_3">DAY 3</span>
-                <span class="day-reward-icon">📦</span>
+                <span class="day-reward-icon" aria-hidden="true">📦</span>
+                <span class="day-reward-qty">x2</span>
                 <span class="day-reward-label">Ammo Crate</span>
-                <span class="day-status-pill">✓</span>
+                <span class="day-status-pill claimed-pill" aria-label="Claimed">✓</span>
               </div>
-              <div class="day-slot claimed">
+              <div class="day-slot claimed" role="listitem">
                 <span class="day-num" data-i18n="day_4">DAY 4</span>
-                <span class="day-reward-icon">💎</span>
-                <span class="day-reward-label">250 Credits</span>
-                <span class="day-status-pill">✓</span>
+                <span class="day-reward-icon" aria-hidden="true">💎</span>
+                <span class="day-reward-qty">x250</span>
+                <span class="day-reward-label">Credits</span>
+                <span class="day-status-pill claimed-pill" aria-label="Claimed">✓</span>
               </div>
-              <div class="day-slot ready-to-claim" id="day-slot-5">
+              <div class="day-slot ready-to-claim" id="day-slot-5" role="listitem">
                 <span class="day-num" data-i18n="day_5">DAY 5</span>
-                <span class="day-reward-icon">🛡️</span>
+                <span class="day-reward-icon" aria-hidden="true">🛡️</span>
+                <span class="day-reward-qty">x1</span>
                 <span class="day-reward-label">Armor Pack</span>
                 <span class="day-status-pill ready-pill" data-i18n="ready">READY</span>
               </div>
-              <div class="day-slot locked">
+              <div class="day-slot locked" role="listitem">
                 <span class="day-num" data-i18n="day_6">DAY 6</span>
-                <span class="day-reward-icon">🔑</span>
+                <span class="day-reward-icon" aria-hidden="true">🔑</span>
+                <span class="day-reward-qty">x1</span>
                 <span class="day-reward-label">Cyber Key</span>
-                <span class="day-status-pill lock-icon">🔒</span>
+                <span class="day-status-pill lock-pill" aria-label="Locked">🔒</span>
               </div>
-              <div class="day-slot locked epic-slot">
+              <div class="day-slot locked epic-slot" role="listitem">
                 <span class="day-num" data-i18n="day_7">DAY 7</span>
-                <span class="day-reward-icon">🔫</span>
+                <span class="day-reward-icon" aria-hidden="true">🔫</span>
+                <span class="day-reward-qty">x1</span>
                 <span class="day-reward-label">Viper Skin</span>
-                <span class="day-status-pill lock-icon">🔒</span>
+                <span class="day-status-pill lock-pill" aria-label="Locked">🔒</span>
               </div>
             </div>
 
@@ -475,19 +568,19 @@
               <button type="button" id="btn-claim-checkin" class="btn-claim-reward" data-i18n="btn_claim">
                 🎁 CLAIM TODAY'S REWARD (DAY 5)
               </button>
-              <div id="checkin-success-msg" class="checkin-success-msg hidden"></div>
+              <div id="checkin-success-msg" class="checkin-success-msg hidden" role="status"></div>
             </div>
           </div>
         </section>
 
         <!-- Right Side: Promo Code & Account Bindings -->
-        <aside class="operative-sidebar-col">
+        <div class="operative-sidebar-col">
           
           <!-- Promo Code Redemption -->
           <div class="card-box redeem-card">
             <div class="card-box-header">
               <div class="card-box-title-group">
-                <span class="card-icon">🎟️</span>
+                <span class="card-icon" aria-hidden="true">🎟️</span>
                 <h3 class="card-box-title" data-i18n="redeem_title">REDEEM GIFT CODE</h3>
               </div>
             </div>
@@ -495,10 +588,11 @@
               <p class="redeem-sub" data-i18n="redeem_desc">Enter community gift or event code to redeem special rewards:</p>
               <form id="form-redeem-code" class="redeem-form" onsubmit="return false;">
                 <div class="redeem-input-row">
+                  <label for="promo-code-input" class="sr-only">Promo Code</label>
                   <input type="text" id="promo-code-input" class="redeem-input" placeholder="e.g. CYBER2026" maxlength="20" required>
                   <button type="submit" id="btn-redeem-submit" class="btn-redeem" data-i18n="btn_redeem">REDEEM</button>
                 </div>
-                <div id="redeem-feedback" class="redeem-feedback hidden"></div>
+                <div id="redeem-feedback" class="redeem-feedback hidden" role="alert"></div>
               </form>
               <div class="redeem-hint">
                 <span data-i18n="hint_test_code">Try test code:</span> <code>CYBER2026</code> <span data-i18n="or">or</span> <code>OP_STRIKE</code>
@@ -510,14 +604,14 @@
           <div class="card-box bindings-card">
             <div class="card-box-header">
               <div class="card-box-title-group">
-                <span class="card-icon">🔗</span>
+                <span class="card-icon" aria-hidden="true">🔗</span>
                 <h3 class="card-box-title" data-i18n="bindings_title">LINKED PLATFORMS</h3>
               </div>
             </div>
             <div class="bindings-list">
               <div class="binding-item connected">
                 <div class="binding-left">
-                  <span class="platform-icon">🎮</span>
+                  <span class="platform-icon" aria-hidden="true">🎮</span>
                   <div>
                     <strong>Steam OpenID</strong>
                     <div class="binding-sub" data-i18n="primary_login">Primary Authentication ID</div>
@@ -528,7 +622,7 @@
 
               <div class="binding-item">
                 <div class="binding-left">
-                  <span class="platform-icon">🟣</span>
+                  <span class="platform-icon" aria-hidden="true">🟣</span>
                   <div>
                     <strong>Twitch Drops</strong>
                     <div class="binding-sub" data-i18n="twitch_desc">Watch streams to earn loot</div>
@@ -539,7 +633,7 @@
 
               <div class="binding-item">
                 <div class="binding-left">
-                  <span class="platform-icon">💬</span>
+                  <span class="platform-icon" aria-hidden="true">💬</span>
                   <div>
                     <strong>Discord Hub</strong>
                     <div class="binding-sub" data-i18n="discord_desc">Sync squad rank & role</div>
@@ -550,7 +644,7 @@
             </div>
           </div>
 
-        </aside>
+        </div>
 
       </div>
     </div>
@@ -558,23 +652,92 @@
   </main>
 
   <!-- ====================================================================
-       FLOATING DEMO STATE SWITCHER (FOR INSTANT REVIEW AS REQUESTED)
+       FLOATING DEMO STATE SWITCHER (DEV PREVIEW TOOL WITH MINIMIZE)
        ==================================================================== -->
-  <div class="demo-state-switcher" id="demo-state-switcher" title="Instant toggle between Guest and Logged-In Operative states">
-    <span class="demo-label">DEMO VIEW:</span>
-    <button type="button" id="btn-demo-toggle" class="btn-demo-toggle">
-      <span id="demo-state-label">GUEST (LOGGED OUT)</span> ⇄
+  <aside class="demo-state-switcher" id="demo-state-switcher" aria-label="Development Demo Switcher">
+    <div class="demo-inner" id="demo-inner-panel">
+      <span class="demo-badge">DEV TOOL</span>
+      <span class="demo-label" id="demo-state-text">GUEST (LOGGED OUT)</span>
+      <button type="button" id="btn-demo-toggle" class="btn-demo-toggle" title="Toggle between Guest and Operative modes">
+        SWITCH ⇄
+      </button>
+      <button type="button" id="btn-demo-minimize" class="btn-demo-minimize" title="Minimize dev bar" aria-label="Minimize preview tool">&minus;</button>
+    </div>
+    <button type="button" id="btn-demo-restore" class="btn-demo-restore hidden" title="Restore dev preview tool">
+      🛠️ DEMO
     </button>
+  </aside>
+
+  <!-- ====================================================================
+       NEWS DETAIL MODAL
+       ==================================================================== -->
+  <div id="news-detail-modal" class="auth-modal hidden" role="dialog" aria-modal="true" aria-labelledby="news-modal-title">
+    <div class="auth-modal-box">
+      <div class="modal-header">
+        <div class="auth-modal-header-tag" id="news-modal-title">
+          <span class="auth-status-dot" aria-hidden="true"></span> <span id="news-modal-header-tag">DISPATCH TRANSMISSION</span>
+        </div>
+        <button id="close-news-modal" class="modal-close" title="Close" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="news-modal-body">
+        <div class="news-modal-meta">
+          <span class="news-category-badge badge-update" id="news-modal-badge">UPDATE</span>
+          <span class="news-date" id="news-modal-date">Oct 18, 2026</span>
+        </div>
+        <h3 class="news-modal-heading" id="news-modal-heading">Headline Title</h3>
+        <div class="news-modal-content" id="news-modal-content">
+          Full transmission text goes here.
+        </div>
+        <div class="news-modal-actions">
+          <button type="button" id="btn-close-news-modal-action" class="modal-submit-btn" data-i18n="close_dispatch">CLOSE DISPATCH</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       EVENT DETAIL MODAL
+       ==================================================================== -->
+  <div id="event-detail-modal" class="auth-modal hidden" role="dialog" aria-modal="true" aria-labelledby="event-modal-title">
+    <div class="auth-modal-box">
+      <div class="modal-header">
+        <div class="auth-modal-header-tag" id="event-modal-title">
+          <span class="auth-status-dot" aria-hidden="true"></span> <span data-i18n="event_briefing_tag">TACTICAL EVENT BRIEFING</span>
+        </div>
+        <button id="close-event-modal" class="modal-close" title="Close" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="event-modal-body">
+        <h3 class="event-modal-heading" data-i18n="event_modal_h3">OPERATION ZERO HOUR: MISSION SPECS</h3>
+        <p class="event-modal-intro" data-i18n="event_modal_intro">
+          Deploy into Sector 07 with your fireteam. Extraction objectives reset every 12 hours. Earn double weapon proficiency and unlock exclusive Cyber Strike armory gear.
+        </p>
+        <div class="event-missions-list">
+          <div class="mission-item">
+            <strong>🎯 Mission 1: Infiltration</strong>
+            <span data-i18n="mission_1">Extract 3 encrypted data drives from the reactor core. Reward: +250 D4C Credits.</span>
+          </div>
+          <div class="mission-item">
+            <strong>🔫 Mission 2: Weapon Mastery</strong>
+            <span data-i18n="mission_2">Score 50 headshot eliminations with DMR weapons. Reward: Neon Recon Blueprint.</span>
+          </div>
+          <div class="mission-item">
+            <strong>🏆 Community Goal</strong>
+            <span data-i18n="mission_3">Collectively clear 1,000,000 sectors across Asia servers to unlock free weekend crates.</span>
+          </div>
+        </div>
+        <button type="button" id="btn-close-event-modal" class="modal-submit-btn" data-i18n="acknowledged">ACKNOWLEDGE &amp; RETURN</button>
+      </div>
+    </div>
   </div>
 
   <!-- ====================================================================
        D4C REGISTRATION & PASSWORD RECOVERY MODAL
        ==================================================================== -->
-  <div id="auth-modal" class="auth-modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-header-tag">
+  <div id="auth-modal" class="auth-modal hidden" role="dialog" aria-modal="true" aria-labelledby="auth-modal-header-tag">
     <div class="auth-modal-box">
       <div class="modal-header">
-        <div class="auth-modal-header-tag" id="modal-header-tag">
-          <span class="auth-status-dot"></span> D4C STUDIO // ACCOUNT SERVICES
+        <div class="auth-modal-header-tag" id="auth-modal-header-tag">
+          <span class="auth-status-dot" aria-hidden="true"></span> D4C STUDIO // ACCOUNT SERVICES
         </div>
         <button id="close-auth-modal" class="modal-close" title="Close Modal" aria-label="Close modal">&times;</button>
       </div>
@@ -589,34 +752,34 @@
       <div class="auth-tab-content active" id="tab-signup" role="tabpanel">
         <form id="form-modal-signup" onsubmit="return false;" novalidate>
           <div class="modal-field">
-            <label class="modal-label" data-i18n="modal_reg_user">DESIRED OPERATIVE USERNAME</label>
+            <label class="modal-label" for="signup-username" data-i18n="modal_reg_user">DESIRED OPERATIVE USERNAME</label>
             <input type="text" id="signup-username" class="modal-input" placeholder="Choose operative username..." required>
           </div>
 
           <div class="modal-field">
-            <label class="modal-label" data-i18n="modal_reg_email">PERMANENT GMAIL / EMAIL ADDRESS</label>
+            <label class="modal-label" for="signup-email" data-i18n="modal_reg_email">PERMANENT GMAIL / EMAIL ADDRESS</label>
             <div class="email-input-group">
               <input type="email" id="signup-email" class="modal-input" placeholder="operative@gmail.com" required>
               <button type="button" id="btn-send-code" class="btn-send-code" data-i18n="btn_send_code">SEND CODE</button>
             </div>
             <!-- Email Verification Status Feedback -->
-            <div id="email-validation-msg" class="email-validation-msg hidden"></div>
+            <div id="email-validation-msg" class="email-validation-msg hidden" role="alert"></div>
           </div>
 
           <div class="modal-field">
-            <label class="modal-label" data-i18n="modal_reg_code">6-DIGIT VERIFICATION CODE</label>
+            <label class="modal-label" for="signup-code" data-i18n="modal_reg_code">6-DIGIT VERIFICATION CODE</label>
             <input type="text" id="signup-code" class="modal-input code-input" placeholder="e.g. 849201" maxlength="6" required>
           </div>
 
           <div class="modal-field">
-            <label class="modal-label" data-i18n="modal_reg_pass">OPERATIVE PASSWORD</label>
+            <label class="modal-label" for="signup-password" data-i18n="modal_reg_pass">OPERATIVE PASSWORD</label>
             <input type="password" id="signup-password" class="modal-input" placeholder="Create strong password..." required>
           </div>
 
           <div class="modal-field">
-            <label class="modal-label" data-i18n="modal_reg_retype">RETYPE PASSWORD (REWRITE)</label>
+            <label class="modal-label" for="signup-retype-password" data-i18n="modal_reg_retype">RETYPE PASSWORD (REWRITE)</label>
             <input type="password" id="signup-retype-password" class="modal-input" placeholder="Rewrite password to confirm..." required>
-            <div id="password-match-msg" class="password-match-msg hidden"></div>
+            <div id="password-match-msg" class="password-match-msg hidden" role="status"></div>
           </div>
 
           <button type="submit" id="btn-modal-register-submit" class="modal-submit-btn" data-i18n="btn_complete_reg">COMPLETE REGISTRATION</button>
@@ -627,21 +790,21 @@
       <div class="auth-tab-content" id="tab-forgot" role="tabpanel">
         <form id="form-modal-forgot" onsubmit="return false;" novalidate>
           <div class="modal-field">
-            <label class="modal-label" data-i18n="modal_rec_account">REGISTERED GMAIL / USERNAME</label>
+            <label class="modal-label" for="forgot-account" data-i18n="modal_rec_account">REGISTERED GMAIL / USERNAME</label>
             <div class="email-input-group">
               <input type="text" id="forgot-account" class="modal-input" placeholder="Enter registered Gmail..." required>
               <button type="button" id="btn-forgot-send-code" class="btn-send-code" data-i18n="btn_send_code">SEND CODE</button>
             </div>
-            <div id="forgot-validation-msg" class="email-validation-msg hidden"></div>
+            <div id="forgot-validation-msg" class="email-validation-msg hidden" role="alert"></div>
           </div>
 
           <div class="modal-field">
-            <label class="modal-label" data-i18n="modal_rec_code">6-DIGIT RESET CODE</label>
+            <label class="modal-label" for="forgot-code" data-i18n="modal_rec_code">6-DIGIT RESET CODE</label>
             <input type="text" id="forgot-code" class="modal-input code-input" placeholder="e.g. 519283" maxlength="6" required>
           </div>
 
           <div class="modal-field">
-            <label class="modal-label" data-i18n="modal_rec_newpass">NEW SECURITY PASSWORD</label>
+            <label class="modal-label" for="forgot-new-pass" data-i18n="modal_rec_newpass">NEW SECURITY PASSWORD</label>
             <input type="password" id="forgot-new-pass" class="modal-input" placeholder="Enter new password..." required>
           </div>
 
@@ -658,13 +821,13 @@
     <div class="auth-modal-box steam-modal-box">
       <div class="modal-header">
         <div class="auth-modal-header-tag" id="steam-modal-title">
-          <span class="auth-status-dot"></span> STEAM OPENID GATEWAY
+          <span class="auth-status-dot" aria-hidden="true"></span> STEAM OPENID GATEWAY
         </div>
         <button id="close-steam-modal" class="modal-close" title="Cancel Steam Auth" aria-label="Cancel Steam Auth">&times;</button>
       </div>
       <div class="steam-modal-body">
         <div class="steam-brand-icon">
-          <svg viewBox="0 0 24 24" width="48" height="48" fill="#1b2838">
+          <svg viewBox="0 0 24 24" width="52" height="52" fill="#1b2838" aria-hidden="true">
             <path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.005.105.005.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 12-5.373 12-12S18.605 0 11.979 0zM7.54 18.216l-1.474-.61c.262.543.714.984 1.287 1.235.918.402 1.986.177 2.651-.519l-.794-.328c-.443.342-1.077.42-1.67.222zm8.4-11.455c-1.394 0-2.527 1.134-2.527 2.528 0 1.393 1.133 2.527 2.527 2.527 1.395 0 2.527-1.134 2.527-2.527 0-1.394-1.132-2.528-2.527-2.528zm.004.996c.846 0 1.533.687 1.533 1.532 0 .846-.687 1.532-1.533 1.532-.846 0-1.532-.686-1.532-1.532 0-.845.686-1.532 1.532-1.532zM8.36 14.188c-.628-.26-1.353-.146-1.859.324l.808.334c.338-.205.771-.247 1.15-.084.58.25.89.877.747 1.482l1.492.617c.05-.244.075-.497.075-.755 0-1.082-.547-2.074-1.413-2.518z"/>
           </svg>
         </div>
@@ -695,7 +858,7 @@
     <div class="auth-modal-box">
       <div class="modal-header">
         <div class="auth-modal-header-tag" id="support-modal-title">
-          <span class="auth-status-dot"></span> <span data-i18n="support_title">D4C OPERATIVE SUPPORT CENTER</span>
+          <span class="auth-status-dot" aria-hidden="true"></span> <span data-i18n="support_title">D4C OPERATIVE SUPPORT CENTER</span>
         </div>
         <button id="close-support-modal" class="modal-close" title="Close" aria-label="Close">&times;</button>
       </div>
@@ -721,14 +884,14 @@
   </div>
 
   <!-- Toast Notification Box -->
-  <div id="toast-notification" class="toast-notification hidden" role="status"></div>
+  <div id="toast-notification" class="toast-notification hidden" role="status" aria-live="polite"></div>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="footer-inner">
       <div class="footer-left">
         <p>&copy; 2026 D4C Studio Inc. All rights reserved. CYBER STRIKE is a registered trademark.</p>
-        <p class="footer-credits">Component architecture based on <strong>0xnihilism</strong> design patterns.</p>
+        <p class="footer-credits">Official Game Operations &amp; Account Center.</p>
       </div>
       <div class="footer-links">
         <a href="#support-modal" id="link-footer-support" data-i18n="nav_support">Support</a>
