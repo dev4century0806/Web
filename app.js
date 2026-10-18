@@ -54,7 +54,7 @@ const TRANSLATIONS = {
     reward_armor: "Armor Pack",
     reward_key: "Cyber Key",
     reward_skin: "Viper Skin",
-    checkin_lock_hint: "Sign in with Steam to claim today's reward: <strong>x250 D4C Credits</strong>!",
+    checkin_lock_hint: "Sign in with Steam to claim today's reward: <strong>x1 Armor Pack</strong>!",
     streak_grace_note: "🛡️ Streak Protection: 24-hour grace window applies across international timezones. 1 missed day drops streak count by 1 tier.",
     news_title: "NEWS & GAME UPDATES",
     filter_all: "ALL",
@@ -69,6 +69,11 @@ const TRANSLATIONS = {
     news_2_snippet: "Register your 5-operative squad for the $25,000 USD international prize pool. Open qualifiers running across Americas, EMEA, and APAC brackets.",
     news_3_title: "Global Server Maintenance & Routing Optimization Completed",
     news_3_snippet: "Infrastructure database indexing successfully completed across Frankfurt, Virginia, Singapore, and São Paulo nodes.",
+    news_4_title: "APAC League Season 3: Tokyo & Singapore Server Expansion",
+    news_4_snippet: "Dedicated server routing deployed for Southeast Asia and Japan to ensure sub-25ms response during regional tournaments.",
+    news_empty_text: "No dispatches found for this operational theater.",
+    news_empty: "No specific regional dispatches found. Switch to ALL or GLOBAL.",
+    daily_reset_at: "Daily reset at",
     auth_header_tag: "ACCOUNT CENTER // STEAM & D4C",
     status_ready: "SECURE GATEWAY",
     login_heading: "ACCOUNT SIGN IN",
@@ -77,7 +82,7 @@ const TRANSLATIONS = {
     steam_maintext: "STEAM",
     steam_security_note: "We redirect to Steam OpenID. We will never ask for your Steam password.",
     d4c_accordion_btn: "OR USE D4C ACCOUNT",
-    d4c_accordion_hint: "D4C is an optional publisher account for cross-platform play and direct recovery. Only use if already linked.",
+    d4c_accordion_hint: "D4C is an optional publisher account for cross-platform play and direct recovery.",
     ph_user: "Username or email",
     ph_pass: "Password",
     ph_promo: "Enter gift or promo code...",
@@ -105,9 +110,23 @@ const TRANSLATIONS = {
     checkin_ready_text: "Day 5 reward is available! Check in to receive your supply drop directly in your in-game vault.",
     ready: "READY",
     btn_claim: "CLAIM TODAY'S REWARD (DAY 5)",
+    claiming_text: "CLAIMING...",
+    today_claimed_btn: "✓ TODAY'S SUPPLY CLAIMED",
+    checkin_claimed_feedback: "✓ 1x Tactical Armor Pack has been dispatched to your global in-game inventory vault.",
     milestones_title: "STREAK MILESTONES",
     milestones_sub: "Reach consecutive check-in milestones for legendary drops",
+    badge_14_days: "14 DAYS",
+    milestone_14_name: "x3 Tactical Cyber Keys",
+    milestone_14_progress: "Progress: 5/14",
+    badge_30_days: "30 DAYS",
+    milestone_30_name: "Tier 7 Legendary Neon Skin",
+    milestone_30_progress: "Progress: 5/30",
     history_title: "RECENT REWARD ACTIVITY",
+    history_yesterday: "Yesterday",
+    history_day4_reward: "💎 x250 D4C Credits",
+    history_2days_ago: "2 days ago",
+    history_day3_reward: "📦 x1 Ammo Crate",
+    history_delivered: "Delivered",
     redeem_title: "REDEEM GIFT CODE",
     redeem_desc: "Enter community gift or event code to redeem special rewards:",
     btn_redeem: "REDEEM",
@@ -118,17 +137,24 @@ const TRANSLATIONS = {
     twitch_desc: "Watch streams to earn loot",
     discord_desc: "Sync squad rank & role",
     btn_link: "LINK",
+    btn_linked: "LINKED ✓",
+    btn_unlink: "UNLINK",
     cookie_title: "Privacy & Cookie Preferences",
     cookie_desc: "We use essential cookies for authentication and session integrity. Optional telemetry cookies help optimize global cluster latency.",
     cookie_essential: "Essential Only",
     cookie_accept: "Accept All",
     tab_register: "REGISTER D4C ACCOUNT",
     tab_forgot: "RECOVER PASSWORD",
+    auth_modal_signup_desc: "Create your permanent D4C ID to link platforms, preserve rewards across accounts, and enable direct account recovery.",
+    auth_signup_user_hint: "Letters, numbers, and underscores only. Min 3 characters.",
+    auth_signup_pass_hint: "Min 8 characters. Must contain letters and numbers.",
     modal_reg_user: "DESIRED USERNAME",
     modal_reg_email: "PERMANENT EMAIL ADDRESS",
     modal_reg_code: "6-DIGIT VERIFICATION CODE",
     modal_reg_pass: "ACCOUNT PASSWORD",
     modal_reg_retype: "RETYPE PASSWORD",
+    passwords_match: "✓ Passwords match",
+    passwords_mismatch: "✗ Passwords do not match",
     age_gate_label: "I confirm I am at least 13 years old (or 16 in the European Union / UK).",
     btn_send_code: "SEND CODE",
     btn_complete_reg: "COMPLETE REGISTRATION",
@@ -181,7 +207,7 @@ const TRANSLATIONS = {
     announcement_text: 'Mùa 3: "Chiến dịch Giờ Số 0" đang diễn ra! Tăng 2x EXP trên toàn bộ máy chủ toàn cầu.',
     event_tag: "SỰ KIỆN CÓ HẠN",
     event_timer: "KẾT THÚC SAU: 3N 14G",
-    event_title: "CHIẾN DỊCH GIỜ SỐ 0: ĐỘT KÍCH MẠNG",
+    event_title: "CHIẾN DỊCH GIỜ SỐ 0: VỤ ĐỘT KÍCH ĐIỆN TỬ",
     event_desc: "Đột kích Khu vực 07 trong chế độ chiến thuật mới. Nhân đôi kinh nghiệm vũ khí, nhận skin Neon Strike độc quyền và phần thưởng mốc cộng đồng.",
     btn_event_action: "XEM CHI TIẾT SỰ KIỆN & NHIỆM VỤ →",
     checkin_title: "ĐIỂM DANH HÀNG NGÀY // NHẬN THƯỞNG",
@@ -200,10 +226,10 @@ const TRANSLATIONS = {
     reward_exp: "Tăng EXP",
     reward_ammo: "Hòm Đạn",
     reward_credits: "Credits",
-    reward_armor: "Giáp Trận",
-    reward_key: "Chìa Khóa",
+    reward_armor: "Gói Giáp Chiến Thuật",
+    reward_key: "Chìa Khóa Cyber",
     reward_skin: "Skin Viper",
-    checkin_lock_hint: "Đăng nhập bằng Steam để nhận quà hôm nay: <strong>x250 D4C Credits</strong>!",
+    checkin_lock_hint: "Đăng nhập bằng Steam để nhận quà hôm nay: <strong>x1 Gói Giáp Chiến Thuật</strong>!",
     streak_grace_note: "🛡️ Bảo vệ chuỗi: Thời gian ân hạn 24 giờ trên các múi giờ quốc tế. Bỏ lỡ 1 ngày chỉ lùi 1 bậc chuỗi.",
     news_title: "BẢN TIN & CẬP NHẬT GAME",
     filter_all: "TẤT CẢ",
@@ -218,6 +244,11 @@ const TRANSLATIONS = {
     news_2_snippet: "Đăng ký đội hình 5 đặc vụ tranh tài giải thưởng 25.000 USD quốc tế. Vòng loại diễn ra đồng thời tại Châu Mỹ, EMEA và APAC.",
     news_3_title: "Hoàn tất bảo trì & tối ưu định tuyến máy chủ toàn cầu",
     news_3_snippet: "Cập nhật dữ liệu hạ tầng hoàn tất tại các cụm Frankfurt, Virginia, Singapore và São Paulo.",
+    news_4_title: "Giải đấu APAC Mùa 3: Mở rộng máy chủ Tokyo & Singapore",
+    news_4_snippet: "Định tuyến máy chủ chuyên dụng cho Đông Nam Á và Nhật Bản nhằm bảo đảm độ trễ dưới 25ms trong các giải đấu khu vực.",
+    news_empty_text: "Không có bản tin nào trong khu vực tác chiến này.",
+    news_empty: "Không tìm thấy bản tin khu vực cụ thể. Chuyển sang TẤT CẢ hoặc TOÀN CẦU.",
+    daily_reset_at: "Làm mới hàng ngày lúc",
     auth_header_tag: "TRUNG TÂM TÀI KHOẢN // STEAM & D4C",
     status_ready: "CỔNG KẾT NỐI AN TOÀN",
     login_heading: "ĐĂNG NHẬP TÀI KHOẢN",
@@ -226,7 +257,7 @@ const TRANSLATIONS = {
     steam_maintext: "STEAM",
     steam_security_note: "Chuyển hướng qua Steam OpenID. Chúng tôi không bao giờ hỏi mật khẩu Steam của bạn.",
     d4c_accordion_btn: "HOẶC DÙNG TÀI KHOẢN D4C",
-    d4c_accordion_hint: "D4C là tài khoản nhà phát hành tùy chọn dùng để đồng bộ đa nền tảng và khôi phục tài khoản. Chỉ dùng nếu đã liên kết.",
+    d4c_accordion_hint: "D4C là tài khoản nhà phát hành tùy chọn dùng để đồng bộ đa nền tảng và khôi phục tài khoản.",
     ph_user: "Tên đăng nhập hoặc email",
     ph_pass: "Mật khẩu",
     ph_promo: "Nhập mã quà tặng hoặc code sự kiện...",
@@ -254,9 +285,23 @@ const TRANSLATIONS = {
     checkin_ready_text: "Phần thưởng Ngày 5 đã sẵn sàng! Điểm danh ngay để nhận quà vào hòm đồ trong game.",
     ready: "SẴN SÀNG",
     btn_claim: "ĐIỂM DANH NHẬN QUÀ (NGÀY 5)",
+    claiming_text: "ĐANG NHẬN...",
+    today_claimed_btn: "✓ ĐÃ NHẬN QUÀ HÔM NAY",
+    checkin_claimed_feedback: "✓ 1x Gói Giáp Chiến Thuật đã được gửi thẳng vào hòm đồ trong game.",
     milestones_title: "MỐC THƯỞNG TÍCH LŨY",
     milestones_sub: "Đạt các mốc điểm danh liên tiếp để mở khóa phần thưởng huyền thoại",
+    badge_14_days: "14 NGÀY",
+    milestone_14_name: "x3 Chìa Khóa Cyber",
+    milestone_14_progress: "Tiến độ: 5/14",
+    badge_30_days: "30 NGÀY",
+    milestone_30_name: "Skin Huyền Thoại Neon Tier 7",
+    milestone_30_progress: "Tiến độ: 5/30",
     history_title: "LỊCH SỬ NHẬN THƯỞNG GẦN ĐÂY",
+    history_yesterday: "Hôm qua",
+    history_day4_reward: "💎 x250 D4C Credits",
+    history_2days_ago: "2 ngày trước",
+    history_day3_reward: "📦 x1 Hòm Đạn",
+    history_delivered: "Đã gửi vào kho",
     redeem_title: "ĐỔI MÃ QUÀ TẶNG (GIFT CODE)",
     redeem_desc: "Nhập mã quà tặng sự kiện hoặc code cộng đồng để nhận quà:",
     btn_redeem: "ĐỔI QUÀ",
@@ -267,17 +312,24 @@ const TRANSLATIONS = {
     twitch_desc: "Xem stream nhận quà rơi",
     discord_desc: "Đồng bộ cấp bậc & vai trò biệt đội",
     btn_link: "LIÊN KẾT",
+    btn_linked: "ĐÃ LIÊN KẾT ✓",
+    btn_unlink: "HỦY LIÊN KẾT",
     cookie_title: "Tùy chọn Quyền Riêng Tư & Cookie",
     cookie_desc: "Chúng tôi sử dụng cookie thiết yếu để bảo đảm an toàn phiên đăng nhập. Cookie đo lường tùy chọn giúp tối ưu hóa độ trễ máy chủ toàn cầu.",
     cookie_essential: "Chỉ Cookie Thiết Yếu",
     cookie_accept: "Chấp Nhận Tất Cả",
     tab_register: "ĐĂNG KÝ TÀI KHOẢN D4C",
     tab_forgot: "KHÔI PHỤC MẬT KHẨU",
+    auth_modal_signup_desc: "Tạo tài khoản D4C để liên kết nền tảng, lưu trữ quà tặng và khôi phục tài khoản trực tiếp.",
+    auth_signup_user_hint: "Chỉ dùng chữ cái, chữ số và gạch dưới. Tối thiểu 3 ký tự.",
+    auth_signup_pass_hint: "Tối thiểu 8 ký tự. Phải bao gồm chữ cái và chữ số.",
     modal_reg_user: "TÊN TÀI KHOẢN MONG MUỐN",
     modal_reg_email: "ĐỊA CHỈ EMAIL CHÍNH THỨC",
     modal_reg_code: "MÃ XÁC MINH 6 CHỮ SỐ",
     modal_reg_pass: "MẬT KHẨU TÀI KHOẢN",
     modal_reg_retype: "NHẬP LẠI MẬT KHẨU",
+    passwords_match: "✓ Mật khẩu trùng khớp",
+    passwords_mismatch: "✗ Mật khẩu không trùng khớp",
     age_gate_label: "Tôi xác nhận tôi đủ từ 13 tuổi trở lên (hoặc 16 tuổi tại Liên minh Châu Âu / Anh).",
     btn_send_code: "GỬI MÃ",
     btn_complete_reg: "HOÀN TẤT ĐĂNG KÝ",
@@ -327,10 +379,10 @@ const TRANSLATIONS = {
     user_lvl: "STF",
     btn_logout: "ABMELDEN",
     badge_event: "EVENT LIVE",
-    announcement_text: 'Saison 3: "Operation Zero Hour" ist aktiv! 2x EXP-Bonus auf allen weltweiten Servern aktiviert.',
+    announcement_text: 'Saison 3: "Operation Stunde Null" ist aktiv! 2x EXP-Bonus auf allen weltweiten Servern aktiviert.',
     event_tag: "ZEITLICH BEGRENZTES EVENT",
     event_timer: "ENDET IN: 3T 14STD",
-    event_title: "OPERATION ZERO HOUR: CYBER-RAUBZUG",
+    event_title: "OPERATION STUNDE NULL: CYBER-RAUBZUG",
     event_desc: "Infiltrieren Sie Sektor 07 im neuen taktischen Extraktionsmodus. Doppel-Waffen-EXP, exklusive Neon-Recon-Skins und Community-Meilensteine.",
     btn_event_action: "EVENT-MISSIONEN & DETAILS ANSEHEN →",
     checkin_title: "TÄGLICHE BELOHNUNGEN // CHECK-IN",
@@ -349,10 +401,10 @@ const TRANSLATIONS = {
     reward_exp: "EXP-Schub",
     reward_ammo: "Munitionskiste",
     reward_credits: "Credits",
-    reward_armor: "Rüstungspaket",
+    reward_armor: "Panzerungspaket",
     reward_key: "Cyber-Schlüssel",
     reward_skin: "Viper-Skin",
-    checkin_lock_hint: "Über Steam anmelden, um die heutige Belohnung einzufordern: <strong>x250 D4C-Credits</strong>!",
+    checkin_lock_hint: "Über Steam anmelden, um die heutige Belohnung einzufordern: <strong>x1 Panzerungspaket</strong>!",
     streak_grace_note: "🛡️ Streak-Schutz: 24-stündige Nachfrist über globale Zeitzonen hinweg. 1 verpasster Tag verringert den Streak um 1 Stufe.",
     news_title: "NEUIGKEITEN & SPIEL-UPDATES",
     filter_all: "ALLE",
@@ -367,6 +419,11 @@ const TRANSLATIONS = {
     news_2_snippet: "Registrieren Sie Ihr 5-Spieler-Team für das internationale Preisgeld von 25.000 USD. Qualifikationsspiele in Amerika, EMEA und APAC.",
     news_3_title: "Globale Serverwartung & Routing-Optimierung abgeschlossen",
     news_3_snippet: "Infrastruktur-Datenbankindizierung in Frankfurt, Virginia, Singapur und São Paulo erfolgreich abgeschlossen.",
+    news_4_title: "APAC-Liga Saison 3: Server-Erweiterung in Tokio & Singapur",
+    news_4_snippet: "Dediziertes Server-Routing für Südostasien und Japan implementiert, um eine Latenz von unter 25 ms während regionaler Turniere zu gewährleisten.",
+    news_empty_text: "Keine Berichte für diesen Einsatzbereich gefunden.",
+    news_empty: "Keine regionalen Berichte gefunden. Wechseln Sie zu ALLE oder GLOBAL.",
+    daily_reset_at: "Tägliches Zurücksetzen um",
     auth_header_tag: "KONTO-ZENTRUM // STEAM & D4C",
     status_ready: "SICHERES GATEWAY",
     login_heading: "KONTO-ANMELDUNG",
@@ -375,7 +432,7 @@ const TRANSLATIONS = {
     steam_maintext: "STEAM",
     steam_security_note: "Wir leiten zu Steam OpenID weiter. Wir fragen niemals nach Ihrem Steam-Passwort.",
     d4c_accordion_btn: "ODER D4C-KONTO VERWENDEN",
-    d4c_accordion_hint: "D4C ist ein optionales Publisher-Konto für plattformübergreifendes Spielen. Nur nutzen, falls bereits verknüpft.",
+    d4c_accordion_hint: "D4C ist ein optionales Publisher-Konto für plattformübergreifendes Spielen und direkte Kontowiederherstellung.",
     ph_user: "Benutzername oder E-Mail",
     ph_pass: "Passwort",
     ph_promo: "Gutschein- oder Aktionscode eingeben...",
@@ -388,8 +445,8 @@ const TRANSLATIONS = {
     global_active: "GLOBALE CLUSTER AKTIV",
     portal_ver: "PORTAL: V2.4.0",
     community_title: "COMMUNITY & CLIENT",
-    dl_client: "SPIEL-CLIENT HERUNTERLADEN",
-    dl_sub: "Über Steam PC-Plattform",
+    dl_client: "SPIEL AUF STEAM HOLEN",
+    dl_sub: "Steam Store (Neuer Tab) • App-Protokoll",
     discord_community: "OFFIZIELLER SQUAD-DISCORD",
     discord_sub: "Über 50.000 aktive Spieler",
     rank_verified: "VERIFIZIERTER SPIELER",
@@ -403,9 +460,23 @@ const TRANSLATIONS = {
     checkin_ready_text: "Die Belohnung für Tag 5 ist verfügbar! Holen Sie sie direkt in Ihren In-Game-Tresor.",
     ready: "BEREIT",
     btn_claim: "TAGESBELOHNUNG EINFORDERN (TAG 5)",
+    claiming_text: "WIRD EINGEFORDERT...",
+    today_claimed_btn: "✓ HEUTIGE BELOHNUNG EINGEFORDERT",
+    checkin_claimed_feedback: "✓ 1x Panzerungspaket wurde erfolgreich an Ihren In-Game-Tresor gesendet.",
     milestones_title: "SERIEN-MEILENSTEINE",
     milestones_sub: "Erreichen Sie Check-in-Meilensteine für legendäre Belohnungen",
+    badge_14_days: "14 TAGE",
+    milestone_14_name: "x3 Taktische Cyber-Schlüssel",
+    milestone_14_progress: "Fortschritt: 5/14",
+    badge_30_days: "30 TAGE",
+    milestone_30_name: "Legendärer Neon-Skin Tier 7",
+    milestone_30_progress: "Fortschritt: 5/30",
     history_title: "LETZTE BELOHNUNGSAKTIVITÄT",
+    history_yesterday: "Gestern",
+    history_day4_reward: "💎 x250 D4C-Credits",
+    history_2days_ago: "Vor 2 Tagen",
+    history_day3_reward: "📦 x1 Munitionskiste",
+    history_delivered: "In Inventar geliefert",
     redeem_title: "GUTSCHEINCODE EINLÖSEN",
     redeem_desc: "Community- oder Event-Code eingeben, um Belohnungen freizuschalten:",
     btn_redeem: "EINLÖSEN",
@@ -416,17 +487,24 @@ const TRANSLATIONS = {
     twitch_desc: "Streams ansehen für Beute-Drops",
     discord_desc: "Squad-Rang & Rolle synchronisieren",
     btn_link: "VERKNÜPFEN",
+    btn_linked: "VERKNÜPFT ✓",
+    btn_unlink: "TRENNEN",
     cookie_title: "Datenschutz- & Cookie-Einstellungen",
     cookie_desc: "Wir verwenden essenzielle Cookies für Authentifizierung und Sitzungssicherheit. Optionale Telemetrie-Cookies optimieren Latenzen.",
     cookie_essential: "Nur essenzielle",
     cookie_accept: "Alle akzeptieren",
     tab_register: "D4C-KONTO ERSTELLEN",
     tab_forgot: "PASSWORT ZURÜCKSETZEN",
+    auth_modal_signup_desc: "Erstellen Sie Ihre permanente D4C-ID, um Plattformen zu verknüpfen und Kontodaten zu sichern.",
+    auth_signup_user_hint: "Nur Buchstaben, Ziffern und Unterstriche. Mindestens 3 Zeichen.",
+    auth_signup_pass_hint: "Mindestens 8 Zeichen. Muss Buchstaben und Zahlen enthalten.",
     modal_reg_user: "GEWÜNSCHTER BENUTZERNAME",
     modal_reg_email: "PERMANENTE E-MAIL-ADRESSE",
     modal_reg_code: "6-STELLIGER BESTÄTIGUNGSCODE",
     modal_reg_pass: "KONTO-PASSWORT",
     modal_reg_retype: "PASSWORT WIEDERHOLEN",
+    passwords_match: "✓ Passwörter stimmen überein",
+    passwords_mismatch: "✗ Passwörter stimmen nicht überein",
     age_gate_label: "Ich bestätige, dass ich mindestens 16 Jahre alt bin (EU / UK) bzw. 13 Jahre weltweit.",
     btn_send_code: "CODE SENDEN",
     btn_complete_reg: "REGISTRIERUNG ABSCHLIESSEN",
@@ -476,10 +554,10 @@ const TRANSLATIONS = {
     user_lvl: "NVL",
     btn_logout: "CERRAR SESIÓN",
     badge_event: "EVENTO ACTIVO",
-    announcement_text: '¡Temporada 3: "Operation Zero Hour" está activa! Doble EXP habilitado en todos los servidores globales.',
+    announcement_text: '¡Temporada 3: "Operación Hora Cero" está activa! Doble EXP habilitado en todos los servidores globales.',
     event_tag: "EVENTO POR TIEMPO LIMITADO",
     event_timer: "TERMINA EN: 3D 14H",
-    event_title: "OPERATION ZERO HOUR: ASALTO CIBERNÉTICO",
+    event_title: "OPERACIÓN HORA CERO: ATRACO CIBERNÉTICO",
     event_desc: "Infiltra el Sector 07 en la nueva incursión táctica de extracción. Doble EXP de armas, aspectos Neon Recon exclusivos y recompensas comunitarias.",
     btn_event_action: "VER MISIONES Y DETALLES DEL EVENTO →",
     checkin_title: "RECOMPENSAS DIARIAS // REGISTRO",
@@ -498,10 +576,10 @@ const TRANSLATIONS = {
     reward_exp: "Potenciador EXP",
     reward_ammo: "Caja de Munición",
     reward_credits: "Créditos",
-    reward_armor: "Paquete de Armadura",
-    reward_key: "Llave Cibernética",
+    reward_armor: "Paquete de Blindaje",
+    reward_key: "Llave Cyber",
     reward_skin: "Aspecto Viper",
-    checkin_lock_hint: "¡Inicia sesión con Steam para reclamar la recompensa de hoy: <strong>x250 Créditos D4C</strong>!",
+    checkin_lock_hint: "¡Inicia sesión con Steam para reclamar la recompensa de hoy: <strong>x1 Paquete de Blindaje</strong>!",
     streak_grace_note: "🛡️ Protección de Racha: Período de gracia de 24 horas en zonas horarias globales. Perder 1 día reduce la racha en 1 nivel.",
     news_title: "NOTICIAS Y ACTUALIZACIONES",
     filter_all: "TODO",
@@ -516,6 +594,11 @@ const TRANSLATIONS = {
     news_2_snippet: "Registra a tu escuadrón de 5 agentes para el premio de $25,000 USD internacional. Clasificatorias abiertas en América, EMEA y APAC.",
     news_3_title: "Mantenimiento y Optimización de Enrutamiento Global Concluido",
     news_3_snippet: "Indexación de bases de datos completada exitosamente en los nodos de Frankfurt, Virginia, Singapur y São Paulo.",
+    news_4_title: "Liga APAC Temporada 3: Expansión de Servidores en Tokio y Singapur",
+    news_4_snippet: "Enrutamiento dedicado para el Sudeste Asiático y Japón para garantizar respuesta sub-25ms en torneos.",
+    news_empty_text: "No se encontraron noticias para esta zona operativa.",
+    news_empty: "No se encontraron noticias regionales. Cambia a TODO o GLOBAL.",
+    daily_reset_at: "Reinicio diario a las",
     auth_header_tag: "CENTRO DE CUENTAS // STEAM Y D4C",
     status_ready: "PASARELA SEGURA",
     login_heading: "INICIAR SESIÓN",
@@ -524,7 +607,7 @@ const TRANSLATIONS = {
     steam_maintext: "STEAM",
     steam_security_note: "Redirigimos a Steam OpenID. Nunca te pediremos tu contraseña de Steam.",
     d4c_accordion_btn: "O USAR CUENTA D4C",
-    d4c_accordion_hint: "D4C es una cuenta opcional de la editora para juego multiplataforma y recuperación. Úsala solo si ya está vinculada.",
+    d4c_accordion_hint: "D4C es una cuenta opcional de la editora para juego multiplataforma y recuperación de cuenta.",
     ph_user: "Usuario o correo electrónico",
     ph_pass: "Contraseña",
     ph_promo: "Ingresa código de regalo o evento...",
@@ -552,9 +635,23 @@ const TRANSLATIONS = {
     checkin_ready_text: "¡La recompensa del Día 5 está disponible! Reclámala directamente en tu bóveda del juego.",
     ready: "LISTO",
     btn_claim: "RECLAMAR RECOMPENSA DE HOY (DÍA 5)",
+    claiming_text: "RECLAMANDO...",
+    today_claimed_btn: "✓ RECOMPENSA DE HOY RECLAMADA",
+    checkin_claimed_feedback: "✓ 1x Paquete de Blindaje ha sido enviado a tu bóveda del juego.",
     milestones_title: "HITOS DE RACHA",
     milestones_sub: "Alcanza hitos de racha para recompensas legendarias",
+    badge_14_days: "14 DÍAS",
+    milestone_14_name: "x3 Llaves Cyber Tácticas",
+    milestone_14_progress: "Progreso: 5/14",
+    badge_30_days: "30 DÍAS",
+    milestone_30_name: "Aspecto Legendario Neón Tier 7",
+    milestone_30_progress: "Progreso: 5/30",
     history_title: "ACTIVIDAD DE RECOMPENSAS RECIENTE",
+    history_yesterday: "Ayer",
+    history_day4_reward: "💎 x250 Créditos D4C",
+    history_2days_ago: "Hace 2 días",
+    history_day3_reward: "📦 x1 Caja de Munición",
+    history_delivered: "Entregado al inventario",
     redeem_title: "CANJEAR CÓDIGO DE REGALO",
     redeem_desc: "Ingresa el código del evento o comunidad para canjear recompensas:",
     btn_redeem: "CANJEAR",
@@ -565,17 +662,24 @@ const TRANSLATIONS = {
     twitch_desc: "Mira transmisiones para ganar recompensas",
     discord_desc: "Sincroniza rol y rango de escuadrón",
     btn_link: "VINCULAR",
+    btn_linked: "VINCULADO ✓",
+    btn_unlink: "DESVINCULAR",
     cookie_title: "Preferencias de Privacidad y Cookies",
     cookie_desc: "Utilizamos cookies esenciales para la seguridad de la sesión. Cookies opcionales de telemetría ayudan a optimizar la latencia global.",
     cookie_essential: "Solo Esenciales",
     cookie_accept: "Aceptar Todas",
     tab_register: "REGISTRAR CUENTA D4C",
     tab_forgot: "RECUPERAR CONTRASEÑA",
+    auth_modal_signup_desc: "Crea tu ID de D4C permanente para vincular plataformas y habilitar la recuperación de cuenta.",
+    auth_signup_user_hint: "Solo letras, números y guiones bajos. Mínimo 3 caracteres.",
+    auth_signup_pass_hint: "Mínimo 8 caracteres. Debe incluir letras y números.",
     modal_reg_user: "NOMBRE DE USUARIO DESEADO",
     modal_reg_email: "CORREO ELECTRÓNICO PERMANENTE",
     modal_reg_code: "CÓDIGO DE VERIFICACIÓN DE 6 DÍGITOS",
     modal_reg_pass: "CONTRASEÑA DE LA CUENTA",
     modal_reg_retype: "REPETIR CONTRASEÑA",
+    passwords_match: "✓ Las contraseñas coinciden",
+    passwords_mismatch: "✗ Las contraseñas no coinciden",
     age_gate_label: "Confirmo que tengo al menos 13 años (o 16 en la Unión Europea / Reino Unido).",
     btn_send_code: "ENVIAR CÓDIGO",
     btn_complete_reg: "COMPLETAR REGISTRO",
@@ -603,7 +707,7 @@ const TRANSLATIONS = {
     footer_platform_disclaimer: "Valve Corporation es la propietaria registrada de Steam y el logotipo de Steam. Este portal cumple con los términos de la API de Steam.",
     close_dispatch: "CERRAR DESPACHO",
     event_briefing_tag: "INFORME TÁCTICO DEL EVENTO",
-    event_modal_h3: "OPERATION ZERO HOUR: DETALLES DE LA MISIÓN",
+    event_modal_h3: "OPERACIÓN HORA CERO: DETALLES DE LA MISIÓN",
     event_modal_intro: "Despliégate en el Sector 07 con tu escuadrón. Los objetivos de extracción se reinician cada 12 horas. Obtén doble EXP de armas.",
     mission_1: "Extrae 3 discos de datos encriptados del núcleo del reactor. Recompensa: +250 Créditos D4C.",
     mission_2: "Consigue 50 bajas con disparos a la cabeza usando rifles DMR. Recompensa: Plano Neon Recon.",
@@ -628,7 +732,7 @@ const TRANSLATIONS = {
     announcement_text: 'シーズン3「オペレーション・ゼロアワー」開催中！全グローバルサーバーで武器経験値2倍ボーナス適用中。',
     event_tag: "期間限定イベント",
     event_timer: "終了まで: 3日 14時間",
-    event_title: "オペレーション・ゼロアワー：サイバー強襲",
+    event_title: "オペレーション・ゼロアワー：サイバーハイスト",
     event_desc: "新戦術レイドでセクター07に潜入せよ。武器経験値2倍、限定ネオンレコンスキン、コミュニティ達成報酬を獲得可能。",
     btn_event_action: "イベント任務と詳細を確認 →",
     checkin_title: "デイリー報酬 // 補給チェックイン",
@@ -647,10 +751,10 @@ const TRANSLATIONS = {
     reward_exp: "EXPブースト",
     reward_ammo: "弾薬クレート",
     reward_credits: "クレジット",
-    reward_armor: "防具パック",
+    reward_armor: "アーマーパック",
     reward_key: "サイバーキー",
     reward_skin: "バイパースキン",
-    checkin_lock_hint: "Steamでサインインして本日の報酬を受け取る: <strong>250 D4Cクレジット</strong>！",
+    checkin_lock_hint: "Steamでサインインして本日の報酬を受け取る: <strong>x1 アーマーパック</strong>！",
     streak_grace_note: "🛡️ ストリーク保護: 各タイムゾーンに対応する24時間の猶予期間があります。1日逃しても1ランク下がるのみです。",
     news_title: "お知らせ ＆ アップデート",
     filter_all: "すべて",
@@ -665,6 +769,11 @@ const TRANSLATIONS = {
     news_2_snippet: "賞金総額25,000米ドルの国際大会に5人制部隊で参戦しよう。南北アメリカ、EMEA、APAC地域で予選開幕。",
     news_3_title: "世界サーバーインフラの最適化メンテナンス完了",
     news_3_snippet: "フランクフルト、バージニア、シンガポール、サンパウロの全拠点でデータベース再構築が正常に完了しました。",
+    news_4_title: "APACリーグ シーズン3：東京＆シンガポール サーバー増設",
+    news_4_snippet: "地域大会での応答速度25ms以下を保証するため、東南アジアおよび日本向け専用ルーティングを導入。",
+    news_empty_text: "この地域の作戦通信はありません。",
+    news_empty: "この地域の通信は見つかりませんでした。「すべて」または「グローバル」に切り替えてください。",
+    daily_reset_at: "デイリーリセット:",
     auth_header_tag: "アカウントセンター // STEAM ＆ D4C",
     status_ready: "安全な接続ゲートウェイ",
     login_heading: "アカウントサインイン",
@@ -673,7 +782,7 @@ const TRANSLATIONS = {
     steam_maintext: "STEAM",
     steam_security_note: "Valve公式のSteam OpenID経由で接続します。Steamのパスワードを要求することは一切ありません。",
     d4c_accordion_btn: "またはD4Cアカウントを使用",
-    d4c_accordion_hint: "D4Cはクロスプレイおよび直接復旧用のパブリッシャーアカウントです（連携済みの場合のみ使用）。",
+    d4c_accordion_hint: "D4Cはクロスプレイおよび直接復旧用のパブリッシャーアカウントです。",
     ph_user: "ユーザー名またはメールアドレス",
     ph_pass: "パスワード",
     ph_promo: "ギフトコードまたはプロモコードを入力...",
@@ -701,9 +810,23 @@ const TRANSLATIONS = {
     checkin_ready_text: "5日目の報酬が受け取り可能です！補給物資をゲーム内保管庫に即時受け取りましょう。",
     ready: "受取可能",
     btn_claim: "本日の報酬を受け取る (5日目)",
+    claiming_text: "受取処理中...",
+    today_claimed_btn: "✓ 本日の報酬受取完了",
+    checkin_claimed_feedback: "✓ アーマーパックx1がゲーム内保管庫へ正常に配布されました。",
     milestones_title: "連続チェックイン目標",
     milestones_sub: "連続ログインで限定ドロップを獲得",
+    badge_14_days: "14日間",
+    milestone_14_name: "x3 タクティカルサイバーキー",
+    milestone_14_progress: "進捗: 5/14",
+    badge_30_days: "30日間",
+    milestone_30_name: "Tier 7 レジェンダリーネオンスキン",
+    milestone_30_progress: "進捗: 5/30",
     history_title: "最近の報酬履歴",
+    history_yesterday: "昨日",
+    history_day4_reward: "💎 250 D4Cクレジット",
+    history_2days_ago: "2日前",
+    history_day3_reward: "📦 弾薬クレートx1",
+    history_delivered: "保管庫へ配布完了",
     redeem_title: "ギフトコードを引き換える",
     redeem_desc: "コミュニティやイベントで配布されたコードを入力して特典を受け取りましょう:",
     btn_redeem: "引き換える",
@@ -714,17 +837,24 @@ const TRANSLATIONS = {
     twitch_desc: "配信を視聴して限定ドロップを獲得",
     discord_desc: "部隊ランクとロールを自動同期",
     btn_link: "連携する",
+    btn_linked: "連携済み ✓",
+    btn_unlink: "連携解除",
     cookie_title: "プライバシーとクッキーの設定",
     cookie_desc: "セッションの安全性を維持するために必須のクッキーを使用しています。任意の測定クッキーは通信速度の改善に役立てられます。",
     cookie_essential: "必須クッキーのみ",
     cookie_accept: "すべて同意する",
     tab_register: "D4Cアカウント登録",
     tab_forgot: "パスワード再設定",
+    auth_modal_signup_desc: "プラットフォーム連携およびアカウント直接復旧のためのD4Cアカウントを作成します。",
+    auth_signup_user_hint: "半角英数字およびアンダースコアのみ。3文字以上。",
+    auth_signup_pass_hint: "8文字以上。英数字を含めてください。",
     modal_reg_user: "希望のユーザー名",
     modal_reg_email: "連絡用メールアドレス",
     modal_reg_code: "6桁の確認コード",
     modal_reg_pass: "アカウントパスワード",
     modal_reg_retype: "パスワード再入力",
+    passwords_match: "✓ パスワードが一致しました",
+    passwords_mismatch: "✗ パスワードが一致しません",
     age_gate_label: "13歳以上（EUおよび英国においては16歳以上）であることを確認します。",
     btn_send_code: "コードを送信",
     btn_complete_reg: "登録を完了する",
@@ -799,7 +929,7 @@ const TRANSLATIONS = {
     reward_armor: "حزمة دروع",
     reward_key: "مفتاح سيبراني",
     reward_skin: "مظهر فايبر",
-    checkin_lock_hint: "سجل الدخول عبر Steam لاستلام مكافأة اليوم: <strong>x250 رصيد D4C</strong>!",
+    checkin_lock_hint: "سجل الدخول عبر Steam لاستلام مكافأة اليوم: <strong>x1 حزمة دروع</strong>!",
     streak_grace_note: "🛡️ حماية التتابع: نافذة سماح لمدة 24 ساعة عبر المناطق الزمنية الدولية. يوم ضائع يخفض مستوى التتابع بدرجة واحدة.",
     news_title: "الأخبار وتحديثات اللعبة",
     filter_all: "الكل",
@@ -813,6 +943,11 @@ const TRANSLATIONS = {
     news_2_snippet: "سجل فريقك المكون من 5 لاعبين للتنافس على جوائز بقيمة 25,000 دولار أمريكي.",
     news_3_title: "اكتمال صيانة الخوادم العالمية وتحسين مسارات الاتصال",
     news_3_snippet: "تم إكمال فهرسة قواعد البيانات بنجاح عبر خوادم فرانكفورت، وفيرجينيا، وسنغافورة، وساو باولو.",
+    news_4_title: "دوري APAC الموسم 3: توسعة خوادم طوكيو وسنغافورة",
+    news_4_snippet: "توجيه خوادم مخصص لمنطقة جنوب شرق آسيا واليابان لضمان استجابة سريعة أثناء البطولات.",
+    news_empty_text: "لا توجد تقارير لهذه المنطقة العملياتية.",
+    news_empty: "لم يتم العثور على تقارير إقليمية. انتقل إلى الكل أو العالمية.",
+    daily_reset_at: "إعادة الضبط اليومي في",
     read_more: "قراءة التفاصيل ←",
     auth_header_tag: "مركز الحساب // STEAM & D4C",
     status_ready: "بوابة آمنة",
@@ -822,7 +957,7 @@ const TRANSLATIONS = {
     steam_maintext: "STEAM",
     steam_security_note: "نحن نستخدم خدمة Steam OpenID الرسمية. لن نطلب أبداً كلمة مرور حساب Steam الخاص بك.",
     d4c_accordion_btn: "أو استخدم حساب D4C",
-    d4c_accordion_hint: "حساب D4C اختياري ومخصص للعب عبر المنصات والدعم المباشر. استخدمه فقط إذا كان مرتبطاً مسبقاً.",
+    d4c_accordion_hint: "حساب D4C اختياري ومخصص للعب عبر المنصات والدعم المباشر.",
     ph_user: "اسم المستخدم أو البريد",
     ph_pass: "كلمة المرور",
     ph_promo: "أدخل رمز الهدية أو الرمز الترويجي...",
@@ -850,9 +985,23 @@ const TRANSLATIONS = {
     checkin_ready_text: "مكافأة اليوم 5 جاهزة! سجل حضورك لاستلام الإمدادات في صندوقك داخل اللعبة.",
     ready: "جاهز",
     btn_claim: "استلام مكافأة اليوم (اليوم 5)",
+    claiming_text: "جاري الاستلام...",
+    today_claimed_btn: "✓ تم استلام مكافأة اليوم",
+    checkin_claimed_feedback: "✓ تم إرسال حزمة دروع تكتيكية واحدة مباشرة إلى صندوقك داخل اللعبة.",
     milestones_title: "محطات التتابع",
     milestones_sub: "حقق محطات التتابع للحصول على غنائم أسطورية",
+    badge_14_days: "14 يوماً",
+    milestone_14_name: "x3 مفاتيح سيبرانية تكتيكية",
+    milestone_14_progress: "التقدم: 5/14",
+    badge_30_days: "30 يوماً",
+    milestone_30_name: "مظهر نيون أسطوري المستوى 7",
+    milestone_30_progress: "التقدم: 5/30",
     history_title: "نشاط المكافآت الأخير",
+    history_yesterday: "أمس",
+    history_day4_reward: "💎 x250 رصيد D4C",
+    history_2days_ago: "منذ يومين",
+    history_day3_reward: "📦 x1 صندوق ذخيرة",
+    history_delivered: "تم التسليم للمخزون",
     redeem_title: "استرداد رمز الهدية",
     redeem_desc: "أدخل الرمز الترويجي للفعالية أو المجتمع لاسترداد المكافأة:",
     btn_redeem: "استرداد",
@@ -863,17 +1012,24 @@ const TRANSLATIONS = {
     twitch_desc: "شاهد البثوث المباشرة للحصول على غنائم",
     discord_desc: "مزامنة رتبة وأدوار الفريق",
     btn_link: "ربط",
+    btn_linked: "مرتبط ✓",
+    btn_unlink: "إلغاء الربط",
     cookie_title: "تفضيلات الخصوصية وملفات تعريف الارتباط",
     cookie_desc: "نستخدم ملفات تعريف ارتباط أساسية للمصادقة وأمان الجلسة.",
     cookie_essential: "الأساسية فقط",
     cookie_accept: "قبول الكل",
     tab_register: "تسجيل حساب D4C",
     tab_forgot: "استعادة كلمة المرور",
+    auth_modal_signup_desc: "أنشئ حساب D4C الدائم لربط المنصات والحفاظ على المكافآت واستعادة الحساب.",
+    auth_signup_user_hint: "أحرف وأرقام وشرطة سفلية فقط. 3 أحرف كحد أدنى.",
+    auth_signup_pass_hint: "8 أحرف كحد أدنى. يجب أن يحتوي على أحرف وأرقام.",
     modal_reg_user: "اسم المستخدم المطلوب",
     modal_reg_email: "البريد الإلكتروني الدائم",
     modal_reg_code: "رمز التحقق المكون من 6 أرقام",
     modal_reg_pass: "كلمة المرور",
     modal_reg_retype: "إعادة كتابة كلمة المرور",
+    passwords_match: "✓ كلمات المرور متطابقة",
+    passwords_mismatch: "✗ كلمات المرور غير متطابقة",
     age_gate_label: "أؤكد أن عمري لا يقل عن 13 عاماً (أو 16 عاماً في الاتحاد الأوروبي / المملكة المتحدة).",
     btn_send_code: "إرسال الرمز",
     btn_complete_reg: "إكمال التسجيل",
@@ -908,7 +1064,7 @@ const TRANSLATIONS = {
     mission_3: "تطهير 1,000,000 قطاع عبر الخوادم العالمية.",
     acknowledged: "تأكيد والعودة",
     lang_fallback_notice: "متوفر بالإنجليزية فقط"
-  }
+  },
 };
 
 // Full news articles with translations and English fallbacks
@@ -970,7 +1126,7 @@ const NEWS_DETAILS = {
   'tournament-championship': {
     badge: "EVENT",
     date: "2026-10-16",
-    region: "global",
+    region: "americas",
     titles: {
       en: "Cyber Strike Global Championship: Open Regional Qualifiers",
       vi: "Giải vô địch Cyber Strike Toàn Cầu: Vòng loại khu vực",
@@ -1004,7 +1160,7 @@ const NEWS_DETAILS = {
   'server-maint': {
     badge: "MAINTENANCE",
     date: "2026-10-14",
-    region: "global",
+    region: "emea",
     titles: {
       en: "Global Server Maintenance & Routing Optimization Completed",
       vi: "Hoàn tất bảo trì & tối ưu định tuyến máy chủ toàn cầu",
@@ -1032,6 +1188,55 @@ const NEWS_DETAILS = {
       ja: `
         <p>インフラチームは、フランクフルト、バージニア、シンガポール、サンパウロの各拠点ノードにおける定期メンテナンスを完了しました。</p>
         <p>世界中のマッチメイキングにおいて、通信遅延が平均18％改善されたことが確認されています。</p>
+      `
+    }
+  },
+  'apac-exclusive': {
+    badge: "EVENT",
+    date: "2026-10-17",
+    region: "apac",
+    titles: {
+      en: "APAC League Season 3: Tokyo & Singapore Server Expansion",
+      vi: "Giải đấu APAC Mùa 3: Mở rộng máy chủ Tokyo & Singapore",
+      de: "APAC-Liga Saison 3: Server-Erweiterung in Tokio & Singapur",
+      es: "Liga APAC Temporada 3: Expansión de Servidores en Tokio y Singapur",
+      ja: "APACリーグ シーズン3：東京＆シンガポール サーバー増設"
+    },
+    contents: {
+      en: `
+        <p>Dedicated server routing deployed for Southeast Asia and Japan to ensure sub-25ms response during regional tournaments.</p>
+        <ul>
+          <li><strong>Tokyo Node:</strong> Direct peering with Japanese ISPs for reduced packet jitter.</li>
+          <li><strong>Singapore Hub:</strong> 40Gbps dedicated bandwidth uplink supporting Southeast Asia esports lobbies.</li>
+        </ul>
+      `,
+      vi: `
+        <p>Định tuyến máy chủ chuyên dụng đã được triển khai cho Đông Nam Á và Nhật Bản nhằm bảo đảm độ trễ dưới 25ms trong các giải đấu khu vực.</p>
+        <ul>
+          <li><strong>Cụm Tokyo:</strong> Kết nối trực tiếp với các nhà mạng Nhật Bản để giảm thiểu hiện tượng giật gói tin.</li>
+          <li><strong>Trung tâm Singapore:</strong> Băng thông chuyên dụng 40Gbps phục vụ các phòng đấu thể thao điện tử Đông Nam Á.</li>
+        </ul>
+      `,
+      de: `
+        <p>Dediziertes Server-Routing für Südostasien und Japan implementiert, um eine Latenz von unter 25 ms während regionaler Turniere zu gewährleisten.</p>
+        <ul>
+          <li><strong>Knoten Tokio:</strong> Direktes Peering mit japanischen Internetanbietern.</li>
+          <li><strong>Hub Singapur:</strong> 40 Gbit/s dedizierte Bandbreite für E-Sport-Lobbys in Südostasien.</li>
+        </ul>
+      `,
+      es: `
+        <p>Enrutamiento de servidores dedicado desplegado para el Sudeste Asiático y Japón para garantizar una latencia inferior a 25 ms en torneos regionales.</p>
+        <ul>
+          <li><strong>Nodo Tokio:</strong> Conexión directa con proveedores de internet en Japón.</li>
+          <li><strong>Centro Singapur:</strong> Ancho de banda dedicado de 40 Gbps para salas de esports.</li>
+        </ul>
+      `,
+      ja: `
+        <p>東南アジアおよび日本地域向けに専用の低遅延ルーティングを導入し、地域大会での応答速度25ms以下を保証します。</p>
+        <ul>
+          <li><strong>東京ノード:</strong> 国内主要プロバイダとの直接ピアリングによりジッターを大幅に抑制。</li>
+          <li><strong>シンガポール拠点:</strong> 東南アジア地域大会用の40Gbps専用帯域を確保。</li>
+        </ul>
       `
     }
   }
@@ -1584,6 +1789,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
   const regionFilterBtns = document.querySelectorAll('.region-filter-btn');
   const newsArticles = document.querySelectorAll('#news-articles-list .news-item');
+  const newsEmptyMsg = document.getElementById('news-empty-msg');
 
   regionFilterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -1592,14 +1798,20 @@ document.addEventListener('DOMContentLoaded', () => {
       regionFilterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
+      let visibleCount = 0;
       newsArticles.forEach(article => {
         const articleRegion = article.getAttribute('data-region');
         if (region === 'all' || articleRegion === region || articleRegion === 'global') {
           article.style.display = 'block';
+          visibleCount++;
         } else {
           article.style.display = 'none';
         }
       });
+
+      if (newsEmptyMsg) {
+        newsEmptyMsg.classList.toggle('hidden', visibleCount > 0);
+      }
     });
   });
 
@@ -1853,31 +2065,79 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  const userErrorMsg = document.getElementById('user-error-msg');
+  const passErrorMsg = document.getElementById('pass-error-msg');
+
+  if (userInput) {
+    userInput.addEventListener('input', () => {
+      if (userErrorMsg) userErrorMsg.classList.add('hidden');
+      const container = userInput.closest('.input__container');
+      if (container) container.classList.remove('input-error');
+      if (loginErrorMsg) loginErrorMsg.classList.add('hidden');
+    });
+  }
+
+  if (passwordInput) {
+    passwordInput.addEventListener('input', () => {
+      if (passErrorMsg) passErrorMsg.classList.add('hidden');
+      const container = passwordInput.closest('.input__container');
+      if (container) container.classList.remove('input-error');
+      if (loginErrorMsg) loginErrorMsg.classList.add('hidden');
+    });
+  }
+
   loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const username = userInput.value.trim();
     const password = passwordInput.value;
-    loginErrorMsg.classList.add('hidden');
+    if (loginErrorMsg) loginErrorMsg.classList.add('hidden');
+    if (userErrorMsg) userErrorMsg.classList.add('hidden');
+    if (passErrorMsg) passErrorMsg.classList.add('hidden');
 
-    if (!username || !password) {
+    if (!username) {
       sfx.playError();
-      loginErrorMsg.textContent = 'Please enter both your username and password.';
-      loginErrorMsg.classList.remove('hidden');
+      if (userErrorMsg) {
+        userErrorMsg.textContent = currentLang === 'vi' ? 'Vui lòng nhập tên tài khoản hoặc email.' : 'Please enter your username or email.';
+        userErrorMsg.classList.remove('hidden');
+      }
+      const container = userInput.closest('.input__container');
+      if (container) container.classList.add('input-error');
+      userInput.focus();
       return;
     }
 
     if (username.length < 3) {
       sfx.playError();
-      loginErrorMsg.textContent = 'Username must be at least 3 characters.';
-      loginErrorMsg.classList.remove('hidden');
+      if (userErrorMsg) {
+        userErrorMsg.textContent = currentLang === 'vi' ? 'Tên đăng nhập phải có ít nhất 3 ký tự.' : 'Username must be at least 3 characters.';
+        userErrorMsg.classList.remove('hidden');
+      }
+      const container = userInput.closest('.input__container');
+      if (container) container.classList.add('input-error');
       userInput.focus();
       return;
     }
 
-    if (password.length < 6) {
+    if (!password) {
       sfx.playError();
-      loginErrorMsg.textContent = 'Password must be at least 6 characters.';
-      loginErrorMsg.classList.remove('hidden');
+      if (passErrorMsg) {
+        passErrorMsg.textContent = currentLang === 'vi' ? 'Vui lòng nhập mật khẩu.' : 'Please enter your password.';
+        passErrorMsg.classList.remove('hidden');
+      }
+      const container = passwordInput.closest('.input__container');
+      if (container) container.classList.add('input-error');
+      passwordInput.focus();
+      return;
+    }
+
+    if (password.length < 8) {
+      sfx.playError();
+      if (passErrorMsg) {
+        passErrorMsg.textContent = currentLang === 'vi' ? 'Mật khẩu phải có ít nhất 8 ký tự.' : 'Password must be at least 8 characters.';
+        passErrorMsg.classList.remove('hidden');
+      }
+      const container = passwordInput.closest('.input__container');
+      if (container) container.classList.add('input-error');
       passwordInput.focus();
       return;
     }
@@ -1993,23 +2253,95 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1000);
   });
 
-  formModalSignup.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const user = document.getElementById('signup-username').value.trim();
+  const signupErrorMsg = document.getElementById('signup-error-msg');
+  const signupUsername = document.getElementById('signup-username');
+  const signupCode = document.getElementById('signup-code');
+
+  function checkPasswordMatch() {
+    if (!passwordMatchMsg) return;
     const pass = signupPassword.value;
     const retype = signupRetypePassword.value;
-    const code = document.getElementById('signup-code').value.trim();
+
+    if (!retype) {
+      passwordMatchMsg.classList.add('hidden');
+      return;
+    }
+
+    passwordMatchMsg.classList.remove('hidden');
+    if (pass === retype) {
+      passwordMatchMsg.className = 'email-validation-msg success';
+      passwordMatchMsg.textContent = TRANSLATIONS[currentLang]?.passwords_match || '✓ Passwords match';
+    } else {
+      passwordMatchMsg.className = 'email-validation-msg error';
+      passwordMatchMsg.textContent = TRANSLATIONS[currentLang]?.passwords_mismatch || '✗ Passwords do not match';
+    }
+  }
+
+  if (signupPassword && signupRetypePassword) {
+    signupPassword.addEventListener('input', () => {
+      checkPasswordMatch();
+      if (signupErrorMsg) signupErrorMsg.classList.add('hidden');
+    });
+    signupRetypePassword.addEventListener('input', () => {
+      checkPasswordMatch();
+      if (signupErrorMsg) signupErrorMsg.classList.add('hidden');
+    });
+  }
+
+  [signupUsername, signupEmail, signupCode].forEach(input => {
+    if (input) {
+      input.addEventListener('input', () => {
+        if (signupErrorMsg) signupErrorMsg.classList.add('hidden');
+      });
+    }
+  });
+
+  formModalSignup.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const user = signupUsername.value.trim();
+    const pass = signupPassword.value;
+    const retype = signupRetypePassword.value;
+    const code = signupCode.value.trim();
+
+    if (signupErrorMsg) signupErrorMsg.classList.add('hidden');
+
+    function showSignupError(msg) {
+      sfx.playError();
+      if (signupErrorMsg) {
+        signupErrorMsg.textContent = msg;
+        signupErrorMsg.classList.remove('hidden');
+      } else {
+        showToast(msg);
+      }
+    }
+
+    if (!user || user.length < 3) {
+      showSignupError(currentLang === 'vi' ? 'Tên đăng nhập phải có ít nhất 3 ký tự.' : 'Username must be at least 3 characters.');
+      signupUsername.focus();
+      return;
+    }
+
+    if (!pass || pass.length < 8) {
+      showSignupError(currentLang === 'vi' ? 'Mật khẩu phải có ít nhất 8 ký tự.' : 'Password must be at least 8 characters.');
+      signupPassword.focus();
+      return;
+    }
+
+    if (pass !== retype) {
+      showSignupError(TRANSLATIONS[currentLang]?.passwords_mismatch || 'Passwords do not match.');
+      signupRetypePassword.focus();
+      return;
+    }
 
     if (!chkAgeGate.checked) {
-      alert('Please confirm you meet the age requirement for your region.');
+      showSignupError(currentLang === 'vi' ? 'Vui lòng xác nhận bạn đủ độ tuổi yêu cầu theo khu vực.' : 'Please confirm you meet the age requirement for your region.');
+      chkAgeGate.focus();
       return;
     }
-    if (pass !== retype) {
-      alert('Passwords do not match.');
-      return;
-    }
+
     if (!generatedRegCode || code !== generatedRegCode) {
-      alert('Invalid or missing verification code.');
+      showSignupError(currentLang === 'vi' ? 'Mã xác thực gồm 6 chữ số không đúng hoặc chưa gửi.' : 'Invalid or missing 6-digit verification code.');
+      signupCode.focus();
       return;
     }
 
@@ -2018,6 +2350,7 @@ document.addEventListener('DOMContentLoaded', () => {
     userInput.value = user;
     passwordInput.value = pass;
     setAuthState(true, user);
+    showToast(currentLang === 'vi' ? `Đăng ký thành công! Đã đăng nhập: [${user}]` : `Registered and signed in as [${user}]`);
   });
 
   btnForgotSendCode.addEventListener('click', () => {
@@ -2088,9 +2421,14 @@ document.addEventListener('DOMContentLoaded', () => {
     isClaimInProgress = true;
     sfx.playSuccess();
 
-    // Visual loading state
+    // Visual loading state (Preserve SVG icon, change only text span)
     btnClaimCheckin.disabled = true;
-    btnClaimCheckin.textContent = 'CLAIMING...';
+    const claimBtnText = document.getElementById('claim-btn-text');
+    if (claimBtnText) {
+      claimBtnText.textContent = TRANSLATIONS[currentLang]?.claiming_text || 'CLAIMING...';
+    } else {
+      btnClaimCheckin.textContent = 'CLAIMING...';
+    }
 
     setTimeout(() => {
       checkinClaimed = true;
@@ -2098,18 +2436,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
       daySlot5.classList.remove('ready-to-claim');
       daySlot5.classList.add('claimed');
-      daySlot5.querySelector('.day-status-pill').textContent = '✓';
-      daySlot5.querySelector('.day-status-pill').className = 'day-status-pill claimed-pill';
+      const slot5Pill = daySlot5.querySelector('.day-status-pill');
+      if (slot5Pill) {
+        slot5Pill.textContent = '✓';
+        slot5Pill.className = 'day-status-pill claimed-pill';
+      }
 
       checkinStreakPill.textContent = '6 / 7 DAYS';
       dashStreakCount.textContent = `🔥 6 ${currentLang === 'vi' ? 'NGÀY' : (currentLang === 'de' ? 'TAGE' : (currentLang === 'es' ? 'DÍAS' : (currentLang === 'ja' ? '日' : 'DAYS')))}`;
 
-      btnClaimCheckin.textContent = '✓ TODAY\'S SUPPLY CLAIMED';
+      if (claimBtnText) {
+        claimBtnText.textContent = TRANSLATIONS[currentLang]?.today_claimed_btn || "✓ TODAY'S SUPPLY CLAIMED";
+      } else {
+        btnClaimCheckin.textContent = "✓ TODAY'S SUPPLY CLAIMED";
+      }
 
       checkinSuccessMsg.classList.remove('hidden');
-      checkinSuccessMsg.textContent = '✓ 1x Tactical Armor Pack has been dispatched to your global in-game inventory vault.';
+      checkinSuccessMsg.textContent = TRANSLATIONS[currentLang]?.checkin_claimed_feedback || '✓ 1x Tactical Armor Pack has been dispatched to your global in-game inventory vault.';
 
-      showToast('Check-in reward delivered!');
+      // Synchronize streak milestones progression (Streak: 6)
+      const m14Text = document.getElementById('milestone-14-text');
+      const m14Fill = document.getElementById('milestone-14-fill');
+      const m30Text = document.getElementById('milestone-30-text');
+      const m30Fill = document.getElementById('milestone-30-fill');
+
+      if (m14Text) m14Text.textContent = currentLang === 'vi' ? 'Tiến độ: 6/14' : (currentLang === 'de' ? 'Fortschritt: 6/14' : (currentLang === 'es' ? 'Progreso: 6/14' : (currentLang === 'ja' ? '進捗: 6/14' : (currentLang === 'ar' ? 'التقدم: 6/14' : 'Progress: 6/14'))));
+      if (m14Fill) m14Fill.style.width = '43%';
+
+      if (m30Text) m30Text.textContent = currentLang === 'vi' ? 'Tiến độ: 6/30' : (currentLang === 'de' ? 'Fortschritt: 6/30' : (currentLang === 'es' ? 'Progreso: 6/30' : (currentLang === 'ja' ? '進捗: 6/30' : (currentLang === 'ar' ? 'التقدم: 6/30' : 'Progress: 6/30'))));
+      if (m30Fill) m30Fill.style.width = '20%';
+
+      // Prepend to live claim history
+      const historyList = document.getElementById('checkin-history-list');
+      if (historyList) {
+        const newHistItem = document.createElement('li');
+        newHistItem.className = 'history-item';
+        const todayDateStr = currentLang === 'vi' ? 'Hôm nay (Vừa xong)' : (currentLang === 'de' ? 'Heute (Gerade eben)' : (currentLang === 'es' ? 'Hoy (Recién)' : (currentLang === 'ja' ? '本日 (たった今)' : (currentLang === 'ar' ? 'اليوم (الآن)' : 'Today (Just now)'))));
+        const deliveredStr = TRANSLATIONS[currentLang]?.history_delivered || 'Delivered';
+        const armorPackStr = TRANSLATIONS[currentLang]?.reward_armor || 'Armor Pack';
+        newHistItem.innerHTML = `<span class="history-date">${todayDateStr}</span> <span class="history-reward">🛡️ x1 ${armorPackStr}</span> <span class="history-status">${deliveredStr}</span>`;
+        historyList.prepend(newHistItem);
+      }
+
+      showToast(TRANSLATIONS[currentLang]?.checkin_claimed_feedback || 'Check-in reward delivered!');
     }, 450);
   });
 
@@ -2172,17 +2541,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Optional platform connect buttons
+  // Optional platform connect buttons (Toggle Link / Unlink)
   ['btn-link-twitch', 'btn-link-discord'].forEach(id => {
     const btn = document.getElementById(id);
     if (btn) {
+      let isLinked = false;
       btn.addEventListener('click', () => {
         sfx.playClick();
-        btn.textContent = 'LINKED';
-        btn.disabled = true;
-        btn.style.background = '#00c853';
-        btn.style.color = '#000000';
-        showToast('Account linked successfully.');
+        isLinked = !isLinked;
+        const platformName = id === 'btn-link-twitch' ? 'Twitch' : 'Discord';
+        if (isLinked) {
+          btn.textContent = TRANSLATIONS[currentLang]?.btn_unlink || 'UNLINK';
+          btn.style.background = '#00c853';
+          btn.style.color = '#000000';
+          btn.setAttribute('aria-pressed', 'true');
+          showToast(currentLang === 'vi' ? `Đã liên kết tài khoản ${platformName} thành công.` : `${platformName} account linked successfully.`);
+        } else {
+          btn.textContent = TRANSLATIONS[currentLang]?.btn_link || 'LINK';
+          btn.style.background = '';
+          btn.style.color = '';
+          btn.setAttribute('aria-pressed', 'false');
+          showToast(currentLang === 'vi' ? `Đã hủy liên kết tài khoản ${platformName}.` : `${platformName} account unlinked.`);
+        }
       });
     }
   });
@@ -2425,7 +2805,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
           if (btnClaimCheckin) {
             btnClaimCheckin.disabled = false;
-            btnClaimCheckin.innerHTML = '<svg class="claim-gift-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg> <span data-i18n="btn_claim">CLAIM TODAY\'S REWARD (DAY 5)</span>';
+            btnClaimCheckin.innerHTML = '<svg class="claim-gift-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg> <span id="claim-btn-text" data-i18n="btn_claim">CLAIM TODAY\'S REWARD (DAY 5)</span>';
           }
           if (checkinSuccessMsg) checkinSuccessMsg.classList.add('hidden');
           showToast('QA: Switched to Logged In (Ready to Claim)');
