@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CYBER STRIKE // Cổng Đăng Nhập Game & Steam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Space+Grotesk:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Grid & Accents -->
+  <div class="bg-grid"></div>
+  <div class="floating-sticker sticker-1">⚡ SERVER ONLINE</div>
+  <div class="floating-sticker sticker-2">FPS: 144 // PING: 16MS</div>
+  <div class="floating-sticker sticker-3">NEO-BRUTALISM UI</div>
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="brand">
+      <div class="brand-badge">PROT-01</div>
+      <div class="brand-title">CYBER<span>STRIKE</span></div>
+    </div>
+    <div class="nav-controls">
+      <button id="sfx-toggle" class="btn-sfx" title="Bật/Tắt âm thanh SFX">
+        <span id="sfx-icon">🔊</span> SFX: <span id="sfx-status">ON</span>
+      </button>
+      
+      <!-- Steam Quick Launch Button in Header -->
+      <a href="https://store.steampowered.com/" target="_blank" rel="noopener noreferrer" class="brutalist-button header-steam" title="Truy cập trang chủ Steam">
+        <div class="steam-logo">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.005.105.005.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 12-5.373 12-12S18.605 0 11.979 0zM7.54 18.216l-1.474-.61c.262.543.714.984 1.287 1.235.918.402 1.986.177 2.651-.519l-.794-.328c-.443.342-1.077.42-1.67.222zm8.4-11.455c-1.394 0-2.527 1.134-2.527 2.528 0 1.393 1.133 2.527 2.527 2.527 1.395 0 2.527-1.134 2.527-2.527 0-1.394-1.132-2.528-2.527-2.528zm.004.996c.846 0 1.533.687 1.533 1.532 0 .846-.687 1.532-1.533 1.532-.846 0-1.532-.686-1.532-1.532 0-.845.686-1.532 1.532-1.532zM8.36 14.188c-.628-.26-1.353-.146-1.859.324l.808.334c.338-.205.771-.247 1.15-.084.58.25.89.877.747 1.482l1.492.617c.05-.244.075-.497.075-.755 0-1.082-.547-2.074-1.413-2.518z"/>
+          </svg>
+        </div>
+        <div class="button-text">
+          <span>STORE</span>
+          <span>STEAM</span>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Game Portal -->
+  <main class="portal-wrapper">
+    <div class="portal-card">
+      <div class="card-header-bar">
+        <div class="dots-group">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="card-system-tag">AUTH_GATEWAY // SECTOR-07</div>
+      </div>
+
+      <div class="portal-content">
+        <div class="portal-intro">
+          <h1 class="portal-heading">ĐĂNG NHẬP VÀO GAME</h1>
+          <p class="portal-subheading">Xác thực tài khoản người dùng để khởi chạy hệ thống chiến đấu</p>
+        </div>
+
+        <!-- Login Form -->
+        <form id="game-login-form" class="auth-form" onsubmit="return false;">
+          <!-- Khung Input Người Dùng (0xnihilism / wise-lizard-57) -->
+          <div class="input-field-wrapper">
+            <div class="input__container" id="username-container">
+              <div class="shadow__input"></div>
+              <button type="button" class="input__button__shadow" id="btn-avatar-icon" title="Avatar">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="#000000"
+                  width="20px"
+                  height="20px"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                  ></path>
+                </svg>
+              </button>
+              <input
+                type="text"
+                name="username"
+                id="user-input"
+                class="input__search"
+                placeholder="Nhập tên tài khoản..."
+                autocomplete="username"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Khung Input Mật Khẩu (Đồng bộ phong cách 3D Neo-Brutalism) -->
+          <div class="input-field-wrapper">
+            <div class="input__container input__container--password" id="password-container">
+              <div class="shadow__input shadow__input--cyan"></div>
+              <button type="button" class="input__button__shadow input__button__shadow--cyan" id="toggle-password" title="Ẩn/Hiện mật khẩu">
+                <svg viewBox="0 0 24 24" width="20px" height="20px" fill="#000000">
+                  <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                </svg>
+              </button>
+              <input
+                type="password"
+                name="password"
+                id="password-input"
+                class="input__search"
+                placeholder="Nhập mật khẩu..."
+                autocomplete="current-password"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" id="btn-submit-login" class="login-launch-btn">
+            <span class="btn-marquee">🚀 KHỞI ĐỘNG VÀO GAME 🚀</span>
+          </button>
+        </form>
+
+        <!-- Divider with Brutalist Label -->
+        <div class="portal-divider">
+          <span>HOẶC KẾT NỐI QUA STEAM</span>
+        </div>
+
+        <!-- Khung Button Steam (0xnihilism / fast-cat-82) -->
+        <div class="steam-action-zone">
+          <p class="steam-desc">Liên kết trực tiếp và mở thư viện game trên Steam:</p>
+          
+          <a
+            href="https://store.steampowered.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="brutalist-button main-steam-btn"
+            id="steam-main-button"
+            title="Mở trang chủ Steam"
+          >
+            <div class="steam-logo">
+              <!-- Official Steam SVG Logo -->
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+                <path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.005.105.005.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 12-5.373 12-12S18.605 0 11.979 0zM7.54 18.216l-1.474-.61c.262.543.714.984 1.287 1.235.918.402 1.986.177 2.651-.519l-.794-.328c-.443.342-1.077.42-1.67.222zm8.4-11.455c-1.394 0-2.527 1.134-2.527 2.528 0 1.393 1.133 2.527 2.527 2.527 1.395 0 2.527-1.134 2.527-2.527 0-1.394-1.132-2.528-2.527-2.528zm.004.996c.846 0 1.533.687 1.533 1.532 0 .846-.687 1.532-1.533 1.532-.846 0-1.532-.686-1.532-1.532 0-.845.686-1.532 1.532-1.532zM8.36 14.188c-.628-.26-1.353-.146-1.859.324l.808.334c.338-.205.771-.247 1.15-.084.58.25.89.877.747 1.482l1.492.617c.05-.244.075-.497.075-.755 0-1.082-.547-2.074-1.413-2.518z"/>
+              </svg>
+            </div>
+            <div class="button-text">
+              <span>EXPLORE ON</span>
+              <span>STEAM</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card Footer Stats -->
+      <div class="card-footer-info">
+        <div class="status-item"><span class="badge-dot"></span> REGION: ASIA-SOUTH</div>
+        <div class="status-item">ENCRYPTION: AES-256</div>
+        <div class="status-item">CLIENT: V2.4.0</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Launching Overlay Simulation Modal -->
+  <div id="launch-overlay" class="launch-modal hidden">
+    <div class="modal-box">
+      <div class="modal-header">
+        <span>SYSTEM LAUNCH SEQUENCE</span>
+        <button id="close-modal" class="modal-close">&times;</button>
+      </div>
+      <div class="terminal-logs" id="terminal-logs">
+        <p class="log-line">> Khởi tạo kết nối bảo mật tới Cyber Strike Network...</p>
+      </div>
+      <div class="loading-progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="modal-action-btn-wrap">
+        <button id="btn-enter-world" class="btn-enter-world hidden">
+          TIẾP TỤC VÀO THẾ GIỚI GAME &gt;&gt;
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Giao diện thiết kế theo phong cách Neo-Brutalism với các thành phần từ tác giả <strong>0xnihilism</strong> (Uiverse.io).</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
